@@ -35,7 +35,7 @@
 - UX Writing: https://raw.githubusercontent.com/content-designer/ux-writing-skill/refs/heads/main/SKILL.md
 - UX Copy: https://raw.githubusercontent.com/anthropics/knowledge-work-plugins/refs/heads/main/design/skills/ux-copy/SKILL.md
 
-Полный индекс: https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/INDEX.md
+Полный индекс: https://raw.githubusercontent.com/Eruashi/adaptive-product-designer/main/INDEX.md
 ```
 
 ---
