@@ -40,27 +40,27 @@
 
 ### Accessibility
 
-- [ ] Контраст WCAG AA минимум для всех текстов (4.5:1 normal, 3:1 large)
-- [ ] Контраст UI элементов ≥ 3:1 (границы, focus ring)
-- [ ] Touch targets ≥ 44pt на mobile
-- [ ] Все интерактивные состояния спроектированы: default, hover, active, focus, disabled, loading, error
-- [ ] Focus order логичный, focus visible
-- [ ] Информация не передаётся ТОЛЬКО цветом
+- [~] Контраст WCAG AA минимум для всех текстов (4.5:1 normal, 3:1 large)
+- [~] Контраст UI элементов ≥ 3:1 (границы, focus ring)
+- [~] Touch targets ≥ 44pt на mobile
+- [x] Все интерактивные состояния спроектированы: default, hover, active, focus, disabled, loading, error
+- [x] Focus order логичный, focus visible
+- [x] Информация не передаётся ТОЛЬКО цветом
 - [ ] Reduced motion / prefers-reduced-motion поддерживается
-- [ ] Empty states для всех data-driven экранов
-- [ ] Loading skeletons / shimmer для ожидания ≥ 500ms
+- [x] Empty states для всех data-driven экранов
+- [x] Loading skeletons / shimmer для ожидания ≥ 500ms
 
 ### Локализация / интернационализация
 
-- [ ] +30% длины текста при переводе учитывается в макетах
+- [x] +30% длины текста при переводе (русский/казахский) учитывается в макетах
 - [ ] RTL-готовность (если продукт международный)
 - [ ] Иное:
 
 ### Дизайн-система
 
-- [ ] Используются токены, не magic numbers
-- [ ] Компоненты из DS, не локальные кастомные без обоснования
-- [ ] Все states компонентов согласованы с другими экранами
+- [x] Используются токены, не magic numbers
+- [~] Компоненты из DS, не локальные кастомные без обоснования
+- [x] Все states компонентов согласованы с другими экранами
 
 ### Иное
 
