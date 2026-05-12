@@ -30,6 +30,45 @@
 
 ---
 
+## 2026-05-12 — Phase 0.5: Team Refactoring (BREAKING)
+
+> **Breaking change:** структура `/personal/` заменена на двухслойную `/team/` + `/people/<name>/`. Это требует миграции на стороне каждого члена команды — см. `people/README.md`.
+
+### Added
+
+- `team/profile.md` 1.0.0 — командный профиль (организация, индустрия, методологии, инструменты, anti-cred).
+- `team/design-principles.md` 1.0.0 — командные принципы и обязательные стандарты.
+- `team/brand-tone.md` 1.0.0 — бренд-голос продукта для user-facing текстов.
+- `team/current-projects.md` 1.0.0 — переехал из `personal/current-projects.md` без изменений.
+- `people/README.md` 1.0.0 — onboarding-инструкция для нового члена команды.
+- `people/_template/profile.md` 1.0.0 — болванка личного профиля дизайнера.
+- `people/_template/tone-of-voice.md` 1.0.0 — болванка личного стиля письма.
+- `people/_template/principles.md` 1.0.0 — болванка личных принципов.
+
+### Changed
+
+- `PROJECT_INSTRUCTIONS.md` 1.0.0 → 2.0.0 — переход на двухслойную загрузку (`/team/` + `/people/<active-user>/`). Введён плейсхолдер `<REPLACE_WITH_YOUR_USERNAME>` для каждого члена команды. Добавлены правила конфликта «личное vs командное» по уровням (стиль / стандарты).
+- `ROUTER.md` 1.0.0 → 2.0.0 — новая иерархия приоритетов с двумя верхними слоями (`/people/` и `/team/`). Добавлены case study по конфликтам: личные принципы vs командные, личный tone-of-voice vs бренд-голос.
+
+### Removed
+
+- `personal/profile.md` — заменено на `team/profile.md` + `people/_template/profile.md`.
+- `personal/tone-of-voice.md` — заменено на `team/brand-tone.md` + `people/_template/tone-of-voice.md`.
+- `personal/design-principles.md` — заменено на `team/design-principles.md` + `people/_template/principles.md`.
+- `personal/current-projects.md` — переехал в `team/current-projects.md`.
+
+### Migration notes
+
+Каждый член команды должен:
+1. Удалить старый PROJECT_INSTRUCTIONS из Claude Project и вставить новый.
+2. Заменить `<REPLACE_WITH_YOUR_USERNAME>` на имя своей папки в `/people/`.
+3. Создать `/people/<своё-имя>/` и скопировать туда `/people/_template/*` files.
+4. Заполнить личные файлы (минимум — `tone-of-voice.md`).
+
+Подробности — в `people/README.md`.
+
+---
+
 ## 2026-05-12 — Фаза 0 завершена (Batch A + B + C)
 
 ### Added
