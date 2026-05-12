@@ -20,16 +20,26 @@
 
 ## Локальные ресурсы
 
-**База:** `https://raw.githubusercontent.com/Eruashi/adaptive-product-designer/main/`
+**База:** `https://raw.githubusercontent.com/Eruashi/mylink-design/main/`
 
-### `/personal/` — твой контекст (грузится первым в каждой сессии)
+### `/team/` — командный контекст (грузится первым)
 
 | Файл | Назначение |
 |---|---|
-| `personal/profile.md` | Кто ты, индустрия, инструменты, методологии |
-| `personal/tone-of-voice.md` | Твой стиль, примеры текстов, anti-tone |
-| `personal/design-principles.md` | Личные принципы, стандарты, спорные позиции |
-| `personal/current-projects.md` | Контекст активных проектов |
+| `team/profile.md` | Кто мы как команда: компания, индустрия, методологии, инструменты |
+| `team/design-principles.md` | Командные принципы и обязательные стандарты |
+| `team/current-projects.md` | Каталог активных проектов команды |
+| `team/brand-tone.md` | Бренд-голос продукта (для user-facing текстов) |
+
+### `/people/` — личный контекст каждого дизайнера
+
+| Файл | Назначение |
+|---|---|
+| `people/README.md` | Onboarding-инструкция для нового члена команды |
+| `people/_template/profile.md` | Болванка: личный профиль |
+| `people/_template/tone-of-voice.md` | Болванка: личный стиль письма |
+| `people/_template/principles.md` | Болванка: личные принципы |
+| `people/<имя>/*` | Файлы конкретного дизайнера |
 
 ### `/skills/` — собственные скиллы по 8 доменам
 
@@ -58,7 +68,7 @@
 
 Все с `ATTRIBUTION.md` и опциональным `EXTENSIONS.md` рядом.
 
-### `/templates/` — шаблоны deliverables (Фаза 0, Batch C)
+### `/templates/` — шаблоны deliverables
 
 | Шаблон | Назначение |
 |---|---|
@@ -264,6 +274,6 @@ claude plugin install design@knowledge-work-plugins
 
 ---
 
-*Локальных ресурсов: 4 personal + 8 будущих доменных + 7 зеркал + 4 шаблона.  
+*Локальных ресурсов: 4 team + 1 README/template на каждого + 7 зеркал + 6 шаблонов.  
 70+ внешних скиллов как fallback.  
 Обновлено: 2026-05-12.*
