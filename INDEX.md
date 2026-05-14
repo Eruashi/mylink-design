@@ -50,7 +50,7 @@
 | UX writing | `skills/ux-writing/` | планируется в Фазе 3 |
 | UX исследования | `skills/ux-research/` | планируется в Фазе 3 |
 | Продуктовая аналитика | `skills/product-analytics/` | готов · v1.0.0 |
-| UX/UI теория | `skills/ux-ui-theory/` | планируется в Фазе 2 |
+| UX/UI теория | `skills/ux-ui-theory/` | готов · v1.0.0 |
 | Графический дизайн | `skills/graphic-design/` | готов · v1.0.0 |
 | Брендинг | `skills/branding/` | готов · v1.0.0 |
 
