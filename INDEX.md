@@ -81,7 +81,13 @@
 
 ### `/frameworks/` — быстрые справочники (cheatsheets)
 
-Будут добавлены в Фазах 1–2. Планируемый минимум: Nielsen 10 heuristics, JTBD, HEART, AARRR, Gestalt principles, Fitts / Hick's law, WCAG 2.2 checklist.
+| Файл | Назначение |
+|---|---|
+| `frameworks/nielsen-heuristics.md` | 10 эвристик юзабилити Нильсена |
+| `frameworks/gestalt-principles.md` | Принципы восприятия формы (Gestalt) |
+| `frameworks/laws-of-ux.md` | Законы UX: Фиттс, Хик, Миллер, Якоб |
+
+Запланированы к добавлению: HEART, AARRR, JTBD, WCAG 2.2 checklist.
 
 ### `/evals/test-prompts.md`
 
