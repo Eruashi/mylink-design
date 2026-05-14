@@ -86,8 +86,11 @@
 | `frameworks/nielsen-heuristics.md` | 10 эвристик юзабилити Нильсена |
 | `frameworks/gestalt-principles.md` | Принципы восприятия формы (Gestalt) |
 | `frameworks/laws-of-ux.md` | Законы UX: Фиттс, Хик, Миллер, Якоб |
+| `frameworks/jtbd.md` | Jobs to Be Done — методология команды |
 
-Запланированы к добавлению: HEART, AARRR, JTBD, WCAG 2.2 checklist.
+**Сознательно не заводятся отдельными файлами** (контент уже покрыт, дублировать — против принципа «ссылаться, не перепечатывать»):
+- HEART, AARRR — внутри `skills/product-analytics` (раздел «Фреймворки»).
+- WCAG 2.2 checklist — в зеркале `mirrors/anthropic/accessibility-review` + шаблонах `design-spec`, `design-critique-template`.
 
 ### `/evals/test-prompts.md`
 
