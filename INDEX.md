@@ -49,9 +49,9 @@
 | Дизайн-системы | `skills/design-systems/` | планируется в Фазе 4 |
 | UX writing | `skills/ux-writing/` | планируется в Фазе 3 |
 | UX исследования | `skills/ux-research/` | планируется в Фазе 3 |
-| Продуктовая аналитика | `skills/product-analytics/` | планируется в Фазе 1 |
+| Продуктовая аналитика | `skills/product-analytics/` | ✅ готов (v1.0.0) |
 | UX/UI теория | `skills/ux-ui-theory/` | планируется в Фазе 2 |
-| Графический дизайн | `skills/graphic-design/` | планируется в Фазе 1 |
+| Графический дизайн | `skills/graphic-design/` | ✅ готов (v1.0.0) |
 | Брендинг | `skills/branding/` | планируется в Фазе 1 |
 
 ### `/mirrors/anthropic/` — зеркала проверенных скиллов
