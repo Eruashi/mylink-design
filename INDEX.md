@@ -52,7 +52,7 @@
 | Продуктовая аналитика | `skills/product-analytics/` | готов · v1.0.0 |
 | UX/UI теория | `skills/ux-ui-theory/` | планируется в Фазе 2 |
 | Графический дизайн | `skills/graphic-design/` | готов · v1.0.0 |
-| Брендинг | `skills/branding/` | планируется в Фазе 1 |
+| Брендинг | `skills/branding/` | готов · v1.0.0 |
 
 ### `/mirrors/anthropic/` — зеркала проверенных скиллов
 
