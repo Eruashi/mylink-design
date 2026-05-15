@@ -47,7 +47,7 @@
 |---|---|---|
 | Продуктовый дизайн | `skills/product-design/` | планируется в Фазе 4 |
 | Дизайн-системы | `skills/design-systems/` | планируется в Фазе 4 |
-| UX writing | `skills/ux-writing/` | планируется в Фазе 3 |
+| UX writing | `skills/ux-writing/` | готов · v1.0.0 |
 | UX исследования | `skills/ux-research/` | планируется в Фазе 3 |
 | Продуктовая аналитика | `skills/product-analytics/` | готов · v1.0.0 |
 | UX/UI теория | `skills/ux-ui-theory/` | готов · v1.0.0 |
