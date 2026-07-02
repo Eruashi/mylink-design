@@ -45,7 +45,7 @@
 
 | Домен | Путь | Статус |
 |---|---|---|
-| Продуктовый дизайн | `skills/product-design/` | draft · v1.0.0 (на ревью) |
+| Продуктовый дизайн | `skills/product-design/` | готов · v1.0.0 |
 | Дизайн-системы | `skills/design-systems/` | готов · v1.0.0 |
 | UX writing | `skills/ux-writing/` | готов · v1.0.0 |
 | UX research | `skills/ux-research/` | готов · v1.0.0 |

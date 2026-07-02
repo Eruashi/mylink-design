@@ -4,7 +4,7 @@ description: Use this skill whenever a designer takes on a feature, screen, or s
 version: 1.0.0
 language: ru
 domain: product-design
-status: draft
+status: stable
 last_updated: 2026-07-02
 depends_on: []
 related: [ux-research, design-systems, ux-ui-theory, product-analytics]
