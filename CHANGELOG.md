@@ -38,6 +38,26 @@
 
 ---
 
+## 2026-07-02 — Phase 4: evals/test-prompts.md покрыт для всех 7 backfilled-доменов
+
+### Added
+- `evals/test-prompts.md` — добавлены секции `design-systems`, `ux-writing`,
+  `ux-research`, `product-analytics`, `ux-ui-theory`, `graphic-design`,
+  `branding`. Для каждого домена — минимум 3 позитивных кейса, привязанных к
+  реальным триггерам из `description` и «Когда использовать» соответствующего
+  `SKILL.md`, плюс 1 негативный кейс на границу с соседним доменом (взят из
+  раздела «Скилл не покрывает» / «Связи» каждого скилла, не выдуман). Закрывает
+  чеклист `CONTRIBUTING.md` шаг 7 для всех 8 доменных скиллов разом — раньше
+  тестовые запросы существовали только для `product-design`.
+
+### Notes
+- Проверка — та же ручная сверка формулировок с frontmatter/телом `SKILL.md`,
+  что и для `product-design` (см. запись выше). Реального прогона через
+  рабочую сессию с роутером не было ни для одного домена.
+- Домен `meta` (`mirrors/anthropic/design-critique`, `accessibility-review`,
+  `design-handoff`) тестовыми запросами не покрыт — отдельная задача, если
+  понадобится.
+
 ## 2026-07-02 — Phase 4: product-design создан, evals/test-prompts.md заведён
 
 ### Added
