@@ -38,6 +38,34 @@
 
 ---
 
+## 2026-07-02 — v1.0: Phase 4 завершена
+
+Все три пункта Phase 4 из `README.md` («product-design, design-systems, evals,
+v1.0») закрыты этой и предыдущими записями от 2026-07-02:
+
+- `design-systems` — закрыт (запись «Phase 4: design-systems закрыт...»).
+- `product-design` — создан и бампнут на `stable` (записи выше).
+- `evals/test-prompts.md` — заведён, покрывает все 8 доменных скиллов
+  (записи выше).
+
+### Added
+- Git tag `v1.0.0` на текущем `HEAD` — первая зафиксированная версия
+  репозитория. Раньше «v1.0» упоминался только текстом в `README.md` /
+  `INDEX.md`, без факта тега.
+
+### Changed
+- `README.md` — статус Phase 4: «Доводка» → «Доводка (завершена 2026-07-02)».
+
+### Notes
+- Тег ставится по факту завершения списка Phase 4, а не по факту глубокого
+  ревью каждого скилла — `product-design` бампнут на `stable` после
+  быстрого, не построчного, подтверждения Zhandos (см. запись выше).
+  Дальнейшие уточнения по любому скиллу — обычные minor/patch bump, не
+  повод откатывать v1.0.
+- Домен `meta` (`mirrors/anthropic/design-critique`, `accessibility-review`,
+  `design-handoff`) и его `evals` — не покрыты, вне скоупа Phase 4 по
+  `README.md`. Если понадобится — отдельная фаза.
+
 ## 2026-07-02 — Phase 4: product-design бампнут draft → stable
 
 ### Changed

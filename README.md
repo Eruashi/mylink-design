@@ -94,7 +94,7 @@ mylink-design/
 - **Phase 1 — Закрытие дыр:** product-analytics, graphic-design, branding.
 - **Phase 2 — Систематизация теории:** ux-ui-theory.
 - **Phase 3 — Углубление практик:** ux-research, ux-writing.
-- **Phase 4 — Доводка:** product-design, design-systems, evals, v1.0.
+- **Phase 4 — Доводка** _(завершена 2026-07-02)_: product-design, design-systems, evals, v1.0.
 
 ---
 
