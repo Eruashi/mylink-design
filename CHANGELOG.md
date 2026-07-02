@@ -42,6 +42,24 @@
 
 ---
 
+## 2026-06-30 — Phase 4 открыта: design-systems + снятие паузы
+
+### Added
+- `skills/design-systems/SKILL.md` 1.0.0 — доменный скилл дизайн-систем. Командный
+  слой поверх Mantine: решение «использовать / расширить / создать локальный /
+  эскалировать в общий DS», token discipline, мандат полноты стейтов, cross-platform
+  (Mantine web / Flutter), DS-audit на соответствие (токены, off-DS, стейты,
+  Mantine-fidelity, консистентность, a11y-gate, локализация). Companion —
+  `mirrors/anthropic/design-system` (генерик-метод), не дублируется.
+- `evals/test-prompts.md` 1.0.0 — первый набор тестовых запросов для проверки
+  роутинга. Наполнен по `design-systems` (триггеры + граничные случаи vs
+  graphic-design / design-critique / зеркало). Остальные домены — backfill.
+
+### Changed
+- `INDEX.md` — статус `skills/design-systems/`: «планируется в Фазе 4» → «готов · v1.0.0».
+- `CHANGELOG.md`, `CONTRIBUTING.md`, `SCHEMA.md`, `README.md` — снят статус паузы по
+  ведению журнала и по `evals/` (пауза действовала «до Phase 4»; Phase 4 открыта).
+
 ## 2026-05-14 — Phase 1: доменные скиллы (product-analytics, graphic-design)
 
 ### Added
