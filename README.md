@@ -37,7 +37,7 @@ LLM не пересказывает скиллы — она их **примен�
 
 1. Создай `/people/<своё-имя>/` и скопируй туда файлы из `/people/_template/`.
 2. Заполни их — особенно `tone-of-voice.md` с примерами своих текстов.
-3. Открой свой Claude Project → Settings → Custom instructions → вставь содержимое `PROJECT_INSTRUCTIONS.md`.
+3. Открой свой Claude Project → Settings → Instructions → вставь содержимое `PROJECT_INSTRUCTIONS.md` (для Cowork — только короткий оверрайд, см. раздел «Режим работы» в самом файле).
 4. Замени `<REPLACE_WITH_YOUR_USERNAME>` на имя своей папки.
 
 После этого пиши обычные запросы. LLM сама определит, что грузить.
@@ -55,6 +55,7 @@ mylink-design/
 ├── PROJECT_INSTRUCTIONS.md   ← шаблон для Claude Project (с плейсхолдером username)
 ├── CONTRIBUTING.md           ← как добавлять/обновлять
 ├── CHANGELOG.md
+├── BACKLOG.md                ← известные дыры покрытия и отложенные решения
 │
 ├── team/                     ← командный контекст (общий для всех)
 │   ├── profile.md
@@ -95,6 +96,8 @@ mylink-design/
 - **Phase 2 — Систематизация теории** _(завершена)_: ux-ui-theory.
 - **Phase 3 — Углубление практик** _(завершена)_: ux-research, ux-writing.
 - **Phase 4 — Доводка** _(завершена 2026-07-02)_: product-design, design-systems, evals, v1.0.
+
+Известные дыры покрытия и отложенные архитектурные решения — [`BACKLOG.md`](BACKLOG.md).
 
 ---
 

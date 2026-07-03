@@ -1,11 +1,11 @@
 ---
 name: ux-research
 description: Use this skill when a designer needs to plan, run, or make sense of user research — formulating a research question, choosing a method, building an interview guide or usability test, analyzing findings, or turning insights into a report. Trigger on requests like "I need to research X", "how should I test this", "what method fits this question", "help me write an interview guide", "we have interview transcripts — what now", "is my research question right", "how to validate this assumption", or any mention of interviews, usability tests, surveys, diary studies, research plans, synthesis, or research reports in a product-design context. This skill makes a designer self-sufficient in ad-hoc research without a dedicated UX-researcher — it does NOT cover building a research practice for the team, academic research methodology, or product analytics (those are other domains).
-version: 1.0.1
+version: 1.0.2
 language: ru
 domain: ux-research
 status: stable
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 depends_on: []
 related: [product-design, ux-ui-theory, product-analytics, mirrors/anthropic/design-critique, mirrors/anthropic/user-research, mirrors/anthropic/research-synthesis]
 tags: [user-research, interviews, usability-testing, surveys, research-plan, synthesis, jtbd-research, ad-hoc-research, b2b-research]
@@ -162,48 +162,31 @@ mirrors: null
 
 ## Ограничения команды (важно — читать всегда)
 
+> Факты — в `team/profile.md` и `team/current-projects.md` (они уже загружены сессией); здесь — только следствия для ресёрча.
+
 ### Нет выделенного UX-researcher'а
 
-Каждый дизайнер сам отвечает за ресёрч своих фич (`team/profile.md`). Скилл должен делать дизайнера **самостоятельным**, но честно отделять «вне роли»:
-
-- Дизайн-исследование одной фичи или флоу — в роли.
-- Большие синтезы нескольких исследований, ресёрч-стратегия, регулярный дискавери — **не в роли продуктового дизайнера в этой команде**. Если задача такого масштаба — это разговор с PM и Екатериной, не ad-hoc ресёрч.
-- Скилл не должен изображать «build a research practice» — это другой масштаб задачи.
+Дизайнер сам ведёт ресёрч своих фич. Скилл делает его самостоятельным, но честно разводит масштаб: исследование одной фичи/флоу — в роли; серии исследований, ресёрч-стратегия, регулярный дискавери — не в роли, это разговор с PM и лидом, а не ad-hoc ресёрч.
 
 ### Captive-аудитория Astana Motors
 
-WTM и другие продукты работают с captive-клиентом — тысячами активных пользователей AM (`current-projects.md`). Это:
-
-- **Плюс для рекрута:** интервью с сотрудниками можно проводить напрямую и через PM (`team/current-projects.md` → WTM, «Бюджет на ресёрч»).
-- **Минус для экспериментов:** низкая толерантность к багам и экспериментам на проде. «Давайте раскатим на 10% и посмотрим» — рискованно. Это перекликается с ограничением A/B-тестов из `skills/product-analytics`.
-- **Альтернативы экспериментам на проде:** прототип-юзабилити-тесты, поэтапная раскатка (одна дочка AM → остальные), сравнение до/после по одной когорте, качественная валидация.
+Рекрут лёгкий (интервью с сотрудниками AM — напрямую и через PM), но эксперименты на проде рискованны: тысячи активных пользователей, низкая толерантность к багам. Альтернативы: прототип-юзабилити-тесты, поэтапная раскатка (одна дочка AM → остальные), сравнение до/после по когорте, качественная валидация.
 
 ### Нет регулярного дискавери
 
-Ресёрч в команде — **ad-hoc, по запросу дизайнера или продуктовой команды**, регулярных дискавери-фаз нет (`team/profile.md`). Это значит:
-
-- Типичный сценарий — **одиночное целевое исследование под конкретный вопрос**, не серия.
-- Долгие методы (diary study на 4 недели, обширные ethnographic studies) — редкий случай, и его надо защищать у PM.
-- Continuous Discovery (Teresa Torres) — направление развития команды, не системная практика.
+Типичный сценарий — одиночное целевое исследование под конкретный вопрос, не серия. Долгие методы (diary study на недели, этнография) — защищать у PM. Continuous Discovery — направление развития, не практика.
 
 ### Аналитика на стадии настройки
 
-Amplitude подключается, но событийная модель не закончена (см. `skills/product-analytics` для деталей). Для ресёрча это значит:
-
-- Quantitative часть исследований ограничена тем, что уже трекается.
-- A/B-тесты как метод **по умолчанию недоступны** — событийная модель ещё не готова под произвольную метрику.
-- Опираться на бизнес-аналитику (operational reports) и качественные данные — рабочая стратегия для текущей стадии.
+Quantitative-часть ограничена тем, что уже трекается; A/B по умолчанию недоступны — событийная модель Amplitude не готова (детали — `skills/product-analytics`). Рабочая стратегия — operational-отчёты плюс качественные данные.
 
 ### Реестр ролей по продуктам — частично
 
-Состав ролей по продуктам зафиксирован только для WTM (`team/current-projects.md`). Для HRM, ATS, Mobile — пока неполно. Для ресёрча это значит:
-
-- **При исследовании конкретного продукта сверь актуальный состав ролей в `current-projects.md`.** Если не зафиксировано — выясни у команды до начала, не угадывай.
-- Не зашивай конкретный список ролей в research questions или анализ — структура исследования должна работать на любом составе ролей. Это та же логика, что в `frameworks/jtbd.md` (он не зашивает роли, отсылает к источнику).
+Роли зафиксированы только для WTM. Перед исследованием сверь состав ролей в `current-projects.md`; не зафиксировано — выясни у команды, не угадывай и не зашивай список в research questions (та же логика, что в `frameworks/jtbd.md`).
 
 ### Личный слой
 
-Активный пользователь Zhandos отметил UX-research как зону роста (`people/Zhandos/profile.md`). Это **не меняет сам скилл** — он рабочий и нейтральный для любого члена команды. Но в диалоге ассистент может подробнее раскрывать «почему так», предлагать дополнительные материалы зеркал, объяснять выбор метода детальнее. Метод при этом один и тот же — меняется только уровень пояснений в ответе, не структура скилла.
+Если активный пользователь отметил ресёрч как зону роста в своём `profile.md` — раскрывай «почему так» подробнее и предлагай материалы зеркал. Метод не меняется — только глубина пояснений.
 
 ## Связи
 

@@ -1,11 +1,11 @@
 ---
 name: graphic-design
 description: Use this skill when a designer needs to make a product UI screen visually work — composition, visual hierarchy, layout, spacing, typography, color, contrast, alignment, rhythm. Trigger on requests like "this screen feels off but I don't know why", "fix the visual hierarchy here", "how do I lay this out", "what's wrong with the spacing", "is this typography ok", "too much color noise", "the screen looks cluttered / flat / unbalanced", or any review where the complaint is visual rather than behavioral. This skill applies graphic-design fundamentals to product interfaces — it does NOT cover posters, banners, marketing key visuals, or illustration work.
-version: 1.0.1
+version: 1.0.2
 language: ru
 domain: graphic-design
 status: stable
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 depends_on: []
 related: [design-systems, ux-ui-theory, mirrors/anthropic/design-critique]
 tags: [composition, visual-hierarchy, layout, typography, color, contrast, spacing, rhythm, alignment]
@@ -27,7 +27,7 @@ mirrors: null
 - «Экран выглядит перегруженным / плоским / несбалансированным».
 - На ревью замечание звучит как «визуально сыро», а не «пользователь не дойдёт до цели».
 
-**Скилл не покрывает:** постеры, баннеры, рекламные key visual, иллюстрации, motion. Это вне домена и вне anti-cred Zhandos (см. `people/Zhandos/profile.md` — «не делаю иллюстрации»). Если запрос про постер или иллюстрацию — честно скажи, что это вне scope скилла и вне фокуса дизайнера, не пытайся натянуть UI-методы на плакат.
+**Скилл не покрывает:** постеры, баннеры, рекламные key visual, иллюстрации, motion. Это вне домена. Сверь также anti-cred активного пользователя (`people/<active-user>/profile.md`): если это и вне его фокуса — предложи передать по профилю команды. В любом случае не натягивай UI-методы на плакат; fallback — внешний скилл из `INDEX.md` (canvas-design в «Графика и инфографика»).
 
 ## Что делает
 
@@ -168,7 +168,7 @@ mirrors: null
 - **Спокойный, функциональный визуал — это требование, а не вкусовщина.** Команда явно не применяет скевоморфизм, neumorphism, glassmorphism и перегруженный motion (`team/design-principles.md`). Не предлагай их даже как «свежую» идею.
 - Высокая плотность — норма, но она должна быть структурной: группировка, выравнивание, ритм. Плотность не отменяет принципы, а делает их критичнее.
 - Аудитория с очень разной технологической грамотностью (от офисных работников до сотрудников заводов). Визуальная ясность здесь — не эстетика, а условие, чтобы интерфейсом вообще пользовались.
-- Помни про слепую зону Zhandos: он сам отмечает, что хочет делать интерфейсы «более красивыми и небанальными» (`people/Zhandos/profile.md`). Скилл должен помогать поднимать визуальную планку — но в рамках сдержанности B2B-инструмента, а не уводя в декоративность.
+- Если активный пользователь отмечает в своём `profile.md` слепую зону по UI (например, «хочу делать интерфейсы красивее и небанальнее») — помогай поднимать визуальную планку, но в рамках сдержанности B2B-инструмента, не уводя в декоративность.
 
 ### WCAG AA — обязательный стандарт, не предмет вкуса
 
@@ -182,7 +182,7 @@ mirrors: null
 ## Связи
 
 - **Predecessor:** `skills/product-design` — если проблема экрана в логике флоу или паттерне, сначала чинится она; графдизайн наводит визуальный порядок уже поверх рабочей структуры.
-- **Successor:** `mirrors/anthropic/design-critique` — когда визуал разобран, ревью проверяет экран целиком (и поведение, и визуал) перед lead review у Екатерины.
+- **Successor:** `mirrors/anthropic/design-critique` — когда визуал разобран, ревью проверяет экран целиком (и поведение, и визуал) перед lead review (лид — см. `team/profile.md`).
 - **Связка с `skills/design-systems`:** графдизайн опирается на токены и шкалы DS; если разбор упирается в «нужного значения нет в DS» — это переход в домен design-systems.
 - **Связка с `skills/ux-ui-theory`:** теория восприятия (gestalt, визуальный вес, cognitive load) — это «почему» за приёмами графдизайна. Когда нужно обосновать решение глубже — это туда.
 - **Conflicts:** прямых конфликтов нет. Но обязательные стандарты из `team/design-principles.md` (WCAG AA, информация не только цветом) побеждают любое визуальное решение. Нельзя «сделать красивее», нарушив контраст или доступность.

@@ -1,11 +1,11 @@
 ---
 name: design-systems
 description: Use this skill whenever a designer works with the team's design system — deciding whether to reuse an existing component, extend it, build a local one, or escalate a change to the shared DS; enforcing token discipline (no magic numbers); ensuring full component state coverage; grounding component decisions in Mantine's API and behavior; splitting vs unifying components; auditing a screen or component for DS compliance; or documenting a component. Trigger on requests like "is there a component for this in the DS", "extend it or make a local component", "check this against the DS", "which states are missing", "how should this behave in Mantine", "split or keep it unified", "is this a breaking change to a shared component", or review notes like "not from DS", "magic number", "no focus / disabled state". This skill covers applying and auditing the existing Mantine-based DS — it does NOT cover building a design system from scratch or generic token taxonomy (see the Anthropic design-system mirror), visual polish and hierarchy (graphic-design), perception theory (ux-ui-theory), holistic UX review (design-critique), or dev handoff packaging (design-handoff).
-version: 1.0.0
+version: 1.0.1
 language: ru
 domain: design-systems
 status: stable
-last_updated: 2026-06-30
+last_updated: 2026-07-03
 depends_on: []
 related: [graphic-design, ux-ui-theory, product-design]
 tags: [design-system, components, tokens, mantine, component-audit, states, local-component, cross-platform]
@@ -47,7 +47,7 @@ mirrors: null
 - **Координация общих компонентов.** Breaking change в shared-компоненты не коммитится в одиночку — согласуется со всеми дизайнерами (кросс-функциональное соглашение, `team/profile.md`).
 - **WCAG AA — обязательный стандарт.** Контраст и работа с цветом побеждают любые личные и эстетические соображения (правило приоритезации из `ROUTER.md`). При конфликте «красиво vs контраст» — называй конфликт и чини в пользу контраста.
 - **Локализация +30%.** Компонент должен пережить удлинение текста при переводе на казахский / русский без поломки лейаута (`team/design-principles.md`).
-- **Бенчмаркинг до проектирования** (личный принцип Zhandos, `people/Zhandos/principles.md`): сначала смотрим, как решено в DS → в Mantine → на соседних экранах продукта, и только потом проектируем своё.
+- **Бенчмаркинг до проектирования**: сначала смотрим, как решено в DS → в Mantine → на соседних экранах продукта, и только потом проектируем своё. (Принцип процесса; личный слой активного пользователя — `people/<active-user>/principles.md` — может его усиливать.)
 
 ## Метод
 
@@ -101,7 +101,7 @@ mirrors: null
 **Кейс 1 — дробление компонента (Date / Month / Year picker).**
 
 - ✅ Разделили на семейство: пропы чистые, каждый компонент со своими параметрами и стейтами; готовый компонент легче вставить под кейс; передача в разработку быстрее; ближе к реализации Mantine, у которой эти пикеры раздельны.
-- ❌ Единый компонент Calendar со всеми режимами: пропы конфликтуют, стейтов слишком много, вставка под конкретный кейс требует распутывать лишнее. (Контекст и аргументация — `people/Zhandos/tone-of-voice.md`.)
+- ❌ Единый компонент Calendar со всеми режимами: пропы конфликтуют, стейтов слишком много, вставка под конкретный кейс требует распутывать лишнее. (Реальный кейс команды; полный разбор — `people/Zhandos/tone-of-voice.md`, Пример 5.)
 
 **Кейс 2 — DS-audit инпута.**
 
@@ -125,4 +125,4 @@ mirrors: null
 - Mantine — [mantine.dev](https://mantine.dev), база компонентов и их API.
 - `mirrors/anthropic/design-system` — генерик-метод дизайн-систем.
 - `templates/component-doc.md` — формат документации компонента.
-- `people/Zhandos/principles.md`, `tone-of-voice.md` — бенчмаринг до проектирования, кейс дробления пикеров.
+- `people/Zhandos/principles.md`, `tone-of-voice.md` — провенанс: бенчмаркинг до проектирования, кейс дробления пикеров (Пример 5). В работе сверяйся со слоем активного пользователя.

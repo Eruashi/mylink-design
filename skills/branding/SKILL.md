@@ -1,11 +1,11 @@
 ---
 name: branding
 description: Use this skill when a designer needs to keep a product screen or feature consistent with the brand — applying brand identity, deciding what the brand dictates versus what the design system dictates, checking whether a solution stays on-brand, or working out how the brand voice shows up in the UI. Trigger on requests like "is this on-brand", "does this fit our identity", "where do I use the logo here", "brand vs design system — what wins", "how should the brand voice sound on this screen", "we're showing this to a client, does it look like us", or any mention of brand, identity, brand guidelines, brand voice in a product-design context. This skill applies branding to product interface work — it does NOT cover creating a brand from scratch, rebranding, logo-craft, illustration, marketing campaigns, or product/feature naming.
-version: 1.0.0
+version: 1.0.1
 language: ru
 domain: branding
 status: stable
-last_updated: 2026-05-14
+last_updated: 2026-07-03
 depends_on: []
 related: [graphic-design, ux-writing, design-systems]
 tags: [brand, identity, brand-voice, brand-guidelines, consistency, brand-vs-ds]
@@ -26,7 +26,7 @@ mirrors: null
 - «Показываем клиенту — выглядит ли это как мы?»
 - На ревью замечание звучит как «не похоже на наш продукт», «выбивается из айдентики».
 
-**Скилл не покрывает:** создание бренда с нуля, ребрендинг, брендинговые стратегии, логотип-дизайн как ремесло, иллюстрации, брендовые key visual, маркетинговый брендинг и рекламные кампании. Нейминг продуктов и фич — тоже вне scope (см. «Связи»). Большая часть этого — вне anti-cred Zhandos («не делаю иллюстрации», «не углубляюсь в маркетинг», см. `people/Zhandos/profile.md`) и вне продуктовой дизайн-работы. Если запрос про создание или переделку бренда — честно скажи, что это вне scope скилла и вне фокуса дизайнера.
+**Скилл не покрывает:** создание бренда с нуля, ребрендинг, брендинговые стратегии, логотип-дизайн как ремесло, иллюстрации, брендовые key visual, маркетинговый брендинг и рекламные кампании. Нейминг продуктов и фич — тоже вне scope (см. «Связи»). Всё это вне продуктовой дизайн-работы; сверь также anti-cred активного пользователя (`people/<active-user>/profile.md`). Если запрос про создание или переделку бренда — честно скажи, что это вне scope скилла, и предложи fallback из `INDEX.md` (раздел «Брендинг»).
 
 ## Что делает
 
@@ -168,7 +168,7 @@ WTM делается под Astana Motors как captive-клиента, но с
 ## Связи
 
 - **Predecessor:** `skills/product-design` — если вопрос в логике фичи, а не в узнаваемости, сначала решается она; бренд-проверка идёт поверх готового продуктового решения.
-- **Successor:** `mirrors/anthropic/design-critique` — когда бренд-соответствие проверено, общее ревью смотрит экран целиком перед lead review у Екатерины.
+- **Successor:** `mirrors/anthropic/design-critique` — когда бренд-соответствие проверено, общее ревью смотрит экран целиком перед lead review (лид — см. `team/profile.md`).
 - **Связка с `skills/graphic-design`:** цепочка из `ROUTER.md` — `branding → graphic-design → ux-writing`. Брендинг задаёт рамку узнаваемости, графдизайн наводит визуальный порядок внутри неё, ux-writing доводит тексты.
 - **Связка с `skills/design-systems`:** граница «бренд vs DS» — общая зона. Когда разбор упирается в «это вопрос компонента или токена», это переход в домен design-systems.
 - **Связка с `ux-writing` и `team/brand-tone.md`:** голос бренда живёт в `brand-tone.md`, детальная работа с микрокопи — в `ux-writing`. Branding только проверяет «звучит ли как бренд», не пишет тексты.

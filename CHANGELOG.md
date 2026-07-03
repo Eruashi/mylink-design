@@ -38,6 +38,27 @@
 
 ---
 
+## 2026-07-03 — Проход 2: токен-диета, деперсонализация, Cowork-режим, EXTENSIONS, BACKLOG
+
+По утверждённому списку П1–П9 + гигиена (см. `FIXES-2026-07.md`, «Проход 2»).
+
+### Added
+- `BACKLOG.md` — известные дыры покрытия (tech-design-review, data-tables, motion, геокарты, frameworks/cognitive, brand-guidelines, глоссарий) и отложенные решения с триггерами.
+- `templates/project-template.md` 1.0.0 — шаблон проекта, вынесен из `team/current-projects.md` (экономия контекста при каждом запросе про проект).
+- `mirrors/anthropic/{design-critique,accessibility-review,design-handoff}/EXTENSIONS.md` — заполнены командной адаптацией (lead review, tech design review, обязательные стандарты, формат handoff); в `ux-copy` и `design-system` — кросс-ссылки на командные скиллы.
+
+### Changed
+- `PROJECT_INSTRUCTIONS.md` 2.1.0 → 2.2.0 — секция «Режим работы: claude.ai vs Cowork» с образцом оверрайда; жёсткая проверка папки active-user в Шаге 1B (ошибка настройки — первой строкой ответа).
+- `team/design-principles.md` — легенда чекбоксов (`[~]` = частично, трактуется как обязательный); в строку интерактивных состояний возвращён `empty` (8 из 8).
+- `team/current-projects.md` — шаблон проекта заменён ссылкой на `templates/project-template.md`; Last updated WTM выправлен (2026-06-30).
+- `people/Zhandos/tone-of-voice.md`, `profile.md` — почищены от каркаса опросника (−4,6 КБ из обязательной базы каждой сессии); `people/README.md` — правило «заполнил — почисти», онбординг для двух режимов, починены опечатки и советы по неймингу папок.
+- Все 8 скиллов — деперсонализация: имена Zhandos/Екатерины заменены на «активный пользователь»/«лид» (провенанс сохранён в Источниках); `ux-research`, `ux-writing`, `product-analytics` — секции «Ограничения команды» сжаты до следствий (факты — ссылками на team-слой); `ux-writing` — стоп-лист больше не дублирует `brand-tone.md`. Версии: product-design, design-systems, branding → 1.0.1; graphic-design, ux-ui-theory, ux-research, ux-writing, product-analytics → 1.0.2.
+- `CONTRIBUTING.md` — новый §7 «CHANGELOG: формат и архив» (1–3 строки на запись; архив при >600 строк; пробелы — в BACKLOG).
+- `README.md`, `INDEX.md` — BACKLOG и project-template в структуре/каталоге; футер INDEX актуализирован.
+
+### Removed
+- `people/Assema/test` — мусорный файл.
+
 ## 2026-07-03 — Роутинг провалидирован реальным прогоном; закрыта дыра INDEX по постерам
 
 ### Added

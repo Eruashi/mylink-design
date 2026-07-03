@@ -78,6 +78,7 @@
 | `templates/usability-test-script.md` | Сценарий модерируемого юзабилити-теста |
 | `templates/component-doc.md` | Документация компонента дизайн-системы |
 | `templates/skill-skeleton.md` | Болванка нового `SKILL.md` (шаг 3 в `CONTRIBUTING.md` §1) |
+| `templates/project-template.md` | Болванка проекта для `team/current-projects.md` |
 
 ### `/frameworks/` — быстрые справочники (cheatsheets)
 
@@ -288,6 +289,6 @@ claude plugin install design@knowledge-work-plugins
 
 ---
 
-*Локальных ресурсов: 4 team-файла + people (README, _template, папки дизайнеров) + 8 доменных скиллов + 7 зеркал + 7 шаблонов + 4 фреймворка + evals.  
+*Локальных ресурсов: 4 team-файла + people (README, _template, папки дизайнеров) + 8 доменных скиллов + 7 зеркал + 8 шаблонов + 4 фреймворка + evals + BACKLOG.  
 70+ внешних скиллов как fallback.  
-Обновлено: 2026-07-02.*
+Обновлено: 2026-07-03.*

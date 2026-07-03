@@ -1,11 +1,11 @@
 ---
 name: ux-ui-theory
 description: Use this skill when a designer needs to diagnose WHY a screen or solution is hard to use — naming the specific theory principle that's broken. Trigger on requests like "why does this screen feel hard", "which usability principle does this violate", "is this too much cognitive load", "users keep missing this — why", "what law explains this", "this menu has too many options", "people expect this to work differently", or any mention of Nielsen heuristics, Gestalt, Fitts, Hick, Miller, cognitive load, mental models, recognition vs recall, perception. This skill diagnoses which principle is at play and what it means for the user — it does NOT cover academic theory depth, neuroscience, design history, or research methods for testing hypotheses.
-version: 1.0.1
+version: 1.0.2
 language: ru
 domain: ux-ui-theory
 status: stable
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 depends_on: []
 related: [graphic-design, ux-writing, product-design, mirrors/anthropic/design-critique]
 tags: [heuristics, nielsen, gestalt, fitts, hick, miller, cognitive-load, mental-models, perception, recognition-recall]
@@ -141,7 +141,7 @@ mirrors: null
 
 ### Скилл рабочий, не обучающий
 
-Скилл — общекомандный диагностический инструмент, нейтральный к тому, кто его вызвал. При этом активный пользователь Zhandos отметил UX-теорию как зону роста (`people/Zhandos/profile.md` — «хочу подтянуть UX-теорию»). Это **не меняет сам скилл**, но даёт сигнал ассистенту в диалоге: с Zhandos можно подробнее раскрывать «почему» за принципом, предлагать справочники, объяснять глубже. Метод при этом один и тот же — меняется только уровень пояснений в ответе, не структура скилла.
+Скилл — общекомандный диагностический инструмент, нейтральный к тому, кто его вызвал. Если активный пользователь отметил UX-теорию как зону роста в своём `profile.md` — это **не меняет сам скилл**, но сигнал ассистенту: раскрывай «почему» за принципом подробнее, предлагай справочники. Метод один и тот же — меняется только уровень пояснений в ответе, не структура скилла.
 
 ## Связи
 

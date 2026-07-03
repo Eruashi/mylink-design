@@ -1,11 +1,11 @@
 ---
 name: product-design
 description: Use this skill whenever a designer takes on a feature, screen, or scenario end-to-end — from a raw task or PM ask through to a flow and screen states ready to hand off. Trigger on requests like "spec this feature", "what should the flow be for X", "help me scope this — the requirements are vague", "walk me through the user journey", "how should this screen behave", "let's benchmark how other products solve this before designing", "design a feature for [role]", "this is a nonlinear scenario, need a flow chart", or any mention of user flow, user journey, feature requirements, scenario design, or a ТЗ that needs to become a screen. This skill owns the design process itself — requirements intake, benchmarking, solution choice, flow, and state/behavior spec. It does NOT cover formal research methods like interviews or usability tests (ux-research), component-level decisions once a screen design exists (design-systems), perception/heuristic theory behind a decision (ux-ui-theory), interface copy (ux-writing), or visual polish and layout hierarchy (graphic-design).
-version: 1.0.0
+version: 1.0.1
 language: ru
 domain: product-design
 status: stable
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 depends_on: []
 related: [ux-research, design-systems, ux-ui-theory, product-analytics]
 tags: [requirements-analysis, benchmarking, user-flow, scoping, feature-design, jtbd, states-and-behavior, flow-chart]
@@ -35,7 +35,7 @@ mirrors: null
 
 ## Контекст и принципы
 
-Два личных принципа задают процесс (`people/Zhandos/principles.md`):
+Два принципа задают процесс — это ядро метода скилла (источник — личный слой автора скилла; личные принципы активного пользователя из `people/<active-user>/principles.md` дополняют их и побеждают в подходе):
 
 - **Бенчмаркинг до проектирования.** Сначала смотрим, как решено у нас в продукте → как решено на рынке / у конкурентов → и только потом проектируем своё. Решение с чистого листа без этого прогона — красный флаг.
 - **Размытое требование — повод уточнить, а не угадать.** Если постановка от PM неоднозначная, не достраиваем недостающее в голове. Возвращаемся с конкретными вопросами, пока scope не станет однозначным.
@@ -47,7 +47,7 @@ mirrors: null
 - **№8 — Решение упрощает пользователю, а не команде.** Фича сложнее для пользователя ради удобства бизнеса — шаг назад, даже если так проще реализовать.
 - **№9 — Консистентность с другими экранами продукта.** Похожая задача решается так же, если нет — причина фиксируется.
 
-Личные стандарты сверх обязательных: строится user flow для проектируемых сценариев, и подробно описывается работа флоу — логика состояний, поведение, переходы (не просто «вот экран»).
+Стандарты сверх обязательных (личный слой — сверяй `people/<active-user>/principles.md`): строится user flow для проектируемых сценариев, и подробно описывается работа флоу — логика состояний, поведение, переходы (не просто «вот экран»).
 
 **JTBD при нескольких ролях.** В продукте минимум три роли с разными jobs — HR-админ, сотрудник, кандидат (`frameworks/jtbd.md`, `team/design-principles.md`). Если фича задевает больше одной роли — работа каждой роли разбирается отдельно, не усредняется.
 
@@ -55,7 +55,7 @@ mirrors: null
 
 1. **Приём задачи и анализ требований.** Проверь постановку на однозначность: кто пользователь (какая роль, если их несколько), какую работу (job) он должен закрыть, в чём проблема сейчас. Если есть пробелы — не достраивай, вернись к PM с конкретными вопросами списком (не одним обобщённым «а что вы имели в виду»). Зафиксируй понимание задачи письменно (принцип №7) — в `templates/design-spec.md`, разделы «Контекст» / «Проблема» / «Кто страдает».
 2. **Бенчмаркинг.** Прогон по цепочке: как это решено у нас в продукте (`team/current-projects.md`) → как решено на рынке и у конкурентов → есть ли смежный паттерн в другом домене (например, готовое решение в DS или в Mantine, см. `design-systems`). Не начинай генерировать варианты, пока не прогнал цепочку.
-3. **Генерация и выбор решения.** Собери 2–3 реалистичных варианта на основе бенчмарка, не один. Выбери и обоснуй: если причин несколько — нумерованным разбором, каждый пункт «заголовок мысли + раскрытие» (см. `people/Zhandos/tone-of-voice.md`). Явно проверь решение на принцип №8 — упрощает ли оно пользователю, или просто удобнее команде.
+3. **Генерация и выбор решения.** Собери 2–3 реалистичных варианта на основе бенчмарка, не один. Выбери и обоснуй: если причин несколько — нумерованным разбором, каждый пункт «заголовок мысли + раскрытие» (формат — `people/<active-user>/tone-of-voice.md`). Явно проверь решение на принцип №8 — упрощает ли оно пользователю, или просто удобнее команде.
 4. **User flow.** Обязателен, если сценарий нелинейный или больше одного экрана (принцип №5). Флоу фиксирует ветвления, входы/выходы, edge cases (пустое состояние данных, ошибка, отмена на середине). Без флоу — только для строго линейных однократных экранов.
 5. **Проработка состояний и поведения.** Для каждого затронутого экрана — состояния default / hover / active / focus / disabled / loading / error / empty (полный набор — обязательный командный стандарт), плюс словесное описание логики: что происходит при каком условии, что критично соблюсти. Это то, что уходит в комментарии для разработки, а не остаётся в голове.
 6. **Передай эстафету дальше.** Если решение доходит до уровня «взять готовый компонент / расширить / создать локальный / эскалировать в DS» — это `design-systems`, не здесь. Если экран финализируется под передачу разработке — `meta/accessibility` (a11y-gate) и `meta/handoff` (упаковка). Не задерживай в этом скилле то, что относится к соседним доменам.
@@ -100,8 +100,8 @@ mirrors: null
 
 ## Источники
 
-- `people/Zhandos/principles.md`, `profile.md` — бенчмаркинг до проектирования, уточнение размытых требований, user flow и детальное описание состояний как личный стандарт.
-- `people/Zhandos/tone-of-voice.md` — формат уточняющих вопросов (Пример 1), формат нумерованной аргументации (Пример 5).
+- `people/Zhandos/principles.md`, `profile.md` — провенанс скилла: принципы метода выведены из этой практики при создании (2026-07-02). В работе сверяйся со слоем активного пользователя.
+- `people/Zhandos/tone-of-voice.md` — референс форматов: уточняющие вопросы (Пример 1), нумерованная аргументация (Пример 5).
 - `team/design-principles.md` — принципы №5, №7, №8, №9; обязательный набор состояний; что готовится до handoff.
 - `frameworks/jtbd.md` — методология для задач с несколькими ролями пользователей.
 - `templates/design-spec.md` — формат деливерабла.
