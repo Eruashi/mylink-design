@@ -38,6 +38,22 @@
 
 ---
 
+## 2026-07-03 — Проход 5: team — tech-design-review + глоссарий brand-tone
+
+Закрытие BACKLOG №1 (tech-design-review) и №7 (глоссарий brand-tone). Документируют и формализуют уже существующий командный контекст (из `profile.md` / `design-principles.md` / `current-projects.md`); пробелы помечены [заполнить] для команды.
+
+### Added
+- `team/tech-design-review.md` — одностраничный процесс: что и зачем, когда (до финализации макета), кто участвует, что подготовить и показать, что собрать, отличие от lead review и пятничного design review. Строго по team-фактам; неизвестное — [заполнить]. Закрывает BACKLOG №1.
+
+### Changed
+- `team/brand-tone.md` — «Терминология»: таблица засеяна 8 парами «говорим X — не говорим Y» (из стоп-листа и правил файла + терминологии WTM); Last updated → 2026-07-03. Закрывает BACKLOG №7.
+- `team/profile.md`, `team/design-principles.md` — пойнтеры на `team/tech-design-review.md` в местах упоминания процесса; Last updated → 2026-07-03.
+- `BACKLOG.md` — закрыты №1 и №7.
+- `INDEX.md` — `team/tech-design-review.md` в каталог team; футер (5 team-файлов).
+
+### Notes
+- Team-файлы правились дополнением (пойнтеры, глоссарий, новый процесс-док) — существующие правила и стандарты не менялись, скиллы на team-слой не ломаются. По `CONTRIBUTING.md` §5 содержание стоит финально свериться с командой: процесс уже практикуется, глоссарий выведен из зафиксированных правил.
+
 ## 2026-07-03 — Проход 4: references (mobile, data-tables) — чистый вариант C, без новых доменов
 
 Закрытие BACKLOG №2 (data-tables) и снятие мобильной части №8 через cross-cutting references, без выделения новых доменов (выбран чистый вариант C). Governance-файлы (SCHEMA, ROUTER, PROJECT_INSTRUCTIONS, CONTRIBUTING) не тронуты.

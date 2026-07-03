@@ -29,6 +29,7 @@
 | `team/design-principles.md` | Командные принципы и обязательные стандарты |
 | `team/current-projects.md` | Каталог активных проектов команды |
 | `team/brand-tone.md` | Бренд-голос продукта (для user-facing текстов) |
+| `team/tech-design-review.md` | Процесс tech design review с frontend-командой (реализуемость до финализации) |
 
 ### `/people/` — личный контекст каждого дизайнера
 
@@ -295,6 +296,6 @@ claude plugin install design@knowledge-work-plugins
 
 ---
 
-*Локальных ресурсов: 4 team-файла + people (README, _template, папки дизайнеров) + 8 доменных скиллов (+ 2 references) + 7 зеркал + 11 шаблонов + 5 фреймворков + evals + BACKLOG.  
+*Локальных ресурсов: 5 team-файлов + people (README, _template, папки дизайнеров) + 8 доменных скиллов (+ 2 references) + 7 зеркал + 11 шаблонов + 5 фреймворков + evals + BACKLOG.  
 70+ внешних скиллов как fallback.  
 Обновлено: 2026-07-03.*
