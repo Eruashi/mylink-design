@@ -67,7 +67,7 @@ mylink-design/
 │   ├── _template/            ← болванки для копирования
 │   └── <имя>/                ← папка каждого дизайнера
 │
-├── skills/                   ← скиллы по 8 доменам (в работе)
+├── skills/                   ← скиллы по 8 доменам
 ├── mirrors/                  ← зеркала проверенных внешних скиллов
 ├── templates/                ← шаблоны deliverables
 ├── frameworks/               ← быстрые справочники
@@ -78,7 +78,7 @@ mylink-design/
 
 ## Принципы репозитория
 
-1. **Иерархия:** `/people/<active-user>/` → `/team/` → `/skills/meta/` → `/skills/<domain>/` → `/mirrors/` → `INDEX.md`.
+1. **Иерархия:** `/people/<active-user>/` → `/team/` → `/skills/<domain>/` → `/mirrors/` (включая meta-зеркала: design-critique, accessibility-review, design-handoff) → `INDEX.md`.
 2. **Локальное побеждает внешнее.** Свои скиллы перебивают зеркала, зеркала — внешние ссылки.
 3. **Личное побеждает командное на уровне стиля.** Командное побеждает на уровне обязательных стандартов.
 4. **Прогрессивная загрузка.** В контекст идёт только то, что триггернулось запросом.
@@ -91,9 +91,9 @@ mylink-design/
 
 - **Phase 0 — Фундамент** _(завершена)_: SCHEMA, ROUTER, /personal/, README, INSTRUCTIONS, зеркала Anthropic, базовые шаблоны.
 - **Phase 0.5 — Team Refactoring** _(завершена)_: переход от `/personal/` к `/team/` + `/people/`.
-- **Phase 1 — Закрытие дыр:** product-analytics, graphic-design, branding.
-- **Phase 2 — Систематизация теории:** ux-ui-theory.
-- **Phase 3 — Углубление практик:** ux-research, ux-writing.
+- **Phase 1 — Закрытие дыр** _(завершена)_: product-analytics, graphic-design, branding.
+- **Phase 2 — Систематизация теории** _(завершена)_: ux-ui-theory.
+- **Phase 3 — Углубление практик** _(завершена)_: ux-research, ux-writing.
 - **Phase 4 — Доводка** _(завершена 2026-07-02)_: product-design, design-systems, evals, v1.0.
 
 ---

@@ -1,13 +1,13 @@
 ---
 name: ux-writing
 description: Use this skill when a designer writes or reviews interface text — button labels, error messages, empty states, tooltips, alerts, toasts, headings, descriptions, hints, onboarding, or any UI copy. Trigger on requests like "what should this button say", "review this error message", "write text for the empty state", "is this tooltip clear", "how to phrase this confirmation", "the heading is unclear", or when a designer shares a screen with text and asks for feedback on wording. The skill produces concrete copy with rationale (not vibe-based suggestions), respects the team's brand voice, and keeps text translatable to Kazakh — it does NOT cover marketing copy, landing pages, sales-driven content, or creation of brand voice itself.
-version: 1.0.0
+version: 1.0.1
 language: ru
 domain: ux-writing
 status: stable
-last_updated: 2026-05-14
+last_updated: 2026-07-02
 depends_on: []
-related: [ux-ui-theory, product-analytics, design-critique, branding]
+related: [ux-ui-theory, product-analytics, branding, mirrors/anthropic/design-critique, mirrors/anthropic/ux-copy]
 tags: [microcopy, copywriting, button-text, error-messages, empty-states, tooltips, brand-voice, localization, kazakh, translatability]
 mirrors: null
 ---

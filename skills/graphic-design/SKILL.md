@@ -1,13 +1,13 @@
 ---
 name: graphic-design
 description: Use this skill when a designer needs to make a product UI screen visually work — composition, visual hierarchy, layout, spacing, typography, color, contrast, alignment, rhythm. Trigger on requests like "this screen feels off but I don't know why", "fix the visual hierarchy here", "how do I lay this out", "what's wrong with the spacing", "is this typography ok", "too much color noise", "the screen looks cluttered / flat / unbalanced", or any review where the complaint is visual rather than behavioral. This skill applies graphic-design fundamentals to product interfaces — it does NOT cover posters, banners, marketing key visuals, or illustration work.
-version: 1.0.0
+version: 1.0.1
 language: ru
 domain: graphic-design
 status: stable
-last_updated: 2026-05-14
+last_updated: 2026-07-02
 depends_on: []
-related: [design-systems, ux-ui-theory, design-critique]
+related: [design-systems, ux-ui-theory, mirrors/anthropic/design-critique]
 tags: [composition, visual-hierarchy, layout, typography, color, contrast, spacing, rhythm, alignment]
 mirrors: null
 ---

@@ -1,15 +1,15 @@
 ---
 name: ux-research
 description: Use this skill when a designer needs to plan, run, or make sense of user research — formulating a research question, choosing a method, building an interview guide or usability test, analyzing findings, or turning insights into a report. Trigger on requests like "I need to research X", "how should I test this", "what method fits this question", "help me write an interview guide", "we have interview transcripts — what now", "is my research question right", "how to validate this assumption", or any mention of interviews, usability tests, surveys, diary studies, research plans, synthesis, or research reports in a product-design context. This skill makes a designer self-sufficient in ad-hoc research without a dedicated UX-researcher — it does NOT cover building a research practice for the team, academic research methodology, or product analytics (those are other domains).
-version: 1.0.0
+version: 1.0.1
 language: ru
 domain: ux-research
 status: stable
-last_updated: 2026-05-14
+last_updated: 2026-07-02
 depends_on: []
-related: [product-design, ux-ui-theory, design-critique, product-analytics]
+related: [product-design, ux-ui-theory, product-analytics, mirrors/anthropic/design-critique, mirrors/anthropic/user-research, mirrors/anthropic/research-synthesis]
 tags: [user-research, interviews, usability-testing, surveys, research-plan, synthesis, jtbd-research, ad-hoc-research, b2b-research]
-mirrors: [user-research, research-synthesis]
+mirrors: null
 ---
 
 # UX Research — самостоятельный ad-hoc ресёрч в команде без UX-researcher'а
@@ -108,7 +108,7 @@ mirrors: [user-research, research-synthesis]
 ### Шаг 7. Передай инсайты в работу
 
 Ресёрч без действия — затраты без эффекта. Каждый инсайт должен иметь адрес:
-- Изменение в дизайне → переход в `skills/product-design` (когда будет).
+- Изменение в дизайне → переход в `skills/product-design`.
 - Переписать текст → `skills/ux-writing`.
 - Проверить на готовом экране → `mirrors/anthropic/design-critique`.
 - Подтвердить метриками → `skills/product-analytics`.
@@ -212,7 +212,7 @@ Amplitude подключается, но событийная модель не 
 - **`frameworks/jtbd.md`** — методология формулировки research questions через работу, не через демографию; анализ через работу, не через мнение. Связь с JTBD — на Шагах 1 и 5.
 - **Шаблоны** `templates/usability-test-script.md`, `templates/research-report.md` — конечные деливераблы. Скилл отсылает к ним, не пересочиняет.
 - **Цепочка из `ROUTER.md`:** `ux-research → research-synthesis → design-critique` — инсайты ресёрча применить к текущему макету.
-- **Successor:** `skills/product-design` (когда будет — применение инсайтов в решении), `skills/ux-writing` (переписать тексты по результатам), `skills/product-analytics` (валидация инсайтов метриками), `mirrors/anthropic/design-critique` (проверка решения на ревью).
+- **Successor:** `skills/product-design` (применение инсайтов в решении), `skills/ux-writing` (переписать тексты по результатам), `skills/product-analytics` (валидация инсайтов метриками), `mirrors/anthropic/design-critique` (проверка решения на ревью).
 - **Conflicts:** прямых конфликтов нет. Но обязательные стандарты из `team/design-principles.md` побеждают любые ресёрч-обоснования. Нельзя через ресёрч обосновать dark pattern, даже если «пользователи готовы»; нельзя обосновать обход a11y, даже если «целевая аудитория не нуждается».
 
 ## Источники

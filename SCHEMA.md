@@ -2,18 +2,15 @@
 
 > Контракт для всех `SKILL.md` в репозитории.
 > Любой скилл, не соответствующий схеме, считается `draft`.
-> ▶️ **Про `CHANGELOG.md`:** пауза снята 2026-07-02 (Phase 4 открыта) — см.
-> блок статуса в начале `CHANGELOG.md`. Упоминания записи в `CHANGELOG.md`
-> в разделах 7 и 8 снова обязательны.
 
 ---
 
 ## 1. Структура файла на диске
 
-Каждый скилл — это директория с `SKILL.md` внутри:
+Норма репозитория — **один домен = один скилл**, `SKILL.md` лежит в корне доменной директории:
 
 ```
-skills/<domain>/<skill-name>/
+skills/<domain>/
 ├── SKILL.md            # Required
 ├── references/         # Optional: глубокие материалы, грузятся по требованию
 │   ├── deep-topic-1.md
@@ -23,6 +20,8 @@ skills/<domain>/<skill-name>/
 └── examples/           # Optional: good/bad примеры (выноси, если они большие)
     └── case-study.md
 ```
+
+Если домен дорастёт до нескольких скиллов — допускается второй уровень `skills/<domain>/<skill-name>/SKILL.md`. Сейчас таких нет: все 8 доменов одноуровневые, и ссылки на скилл пишутся как `skills/<domain>` (так же — в блоке «Использованные скиллы»).
 
 Корневой `SKILL.md` грузится **всегда**, когда триггерится скилл. Файлы из `references/`, `templates/`, `examples/` подтягиваются **по требованию** (progressive disclosure из стандарта Anthropic).
 
@@ -42,7 +41,7 @@ last_updated: 2026-05-12
 depends_on: []                           # список skill-name, без которых не работает
 related: []                              # связанные скиллы (для цепочек)
 tags: [microcopy, ctas, errors]
-mirrors: null                            # если зеркало внешнего скилла — URL оригинала
+mirrors: null                            # всегда null; зеркала определяются по ATTRIBUTION.md
 ---
 ```
 
@@ -56,9 +55,9 @@ mirrors: null                            # если зеркало внешне�
   `product-design` · `design-systems` · `ux-writing` · `ux-research` · `product-analytics` · `ux-ui-theory` · `graphic-design` · `branding` · `meta`.
 - **`status`** — `stable` (готов), `draft` (черновик), `experimental` (тестируем).
 - **`depends_on`** — если скилл требует другого как контекст. Роутер подгрузит зависимости автоматически.
-- **`related`** — для цепочек (`user-research` → `research-synthesis` → `design-critique`).
+- **`related`** — для цепочек. Нотация: локальные скиллы — по имени (`ux-writing`), зеркала — с префиксом (`mirrors/anthropic/design-critique`), чтобы имя зеркала не читалось как несуществующий локальный скилл.
 - **`tags`** — для поиска и фильтрации в INDEX.md.
-- **`mirrors`** — только в `/mirrors/*`. URL оригинала.
+- **`mirrors`** — в `skills/` всегда `null` (поле-заглушка). Файлы в `/mirrors/*` этого поля не несут: их frontmatter — нередактируемый оригинал; машинный признак зеркала — соседний `ATTRIBUTION.md`.
 
 ### Пример «pushy» description
 
@@ -147,14 +146,13 @@ with text without explicitly asking for copy help.
 
 Скиллы из внешних источников (Anthropic и т.п.):
 
-1. Сохраняй оригинальную структуру тела один-в-один.
-2. В директорию скилла добавляй файл `ATTRIBUTION.md`:
-   - Ссылка на оригинал.
+1. Сохраняй оригинал байт-в-байт — и тело, и frontmatter. Никаких добавленных полей.
+2. В директорию скилла добавляй файл `ATTRIBUTION.md` — он и есть машинный признак «это зеркало»:
+   - Ссылка на оригинал (raw URL).
    - Лицензия оригинала.
    - Дата снапшота.
    - Хэш коммита (если есть).
-3. В frontmatter — `mirrors: <url>`.
-4. **Твои дополнения** — в отдельном файле `EXTENSIONS.md` рядом с `SKILL.md`. Не редактируй оригинал — это сломает diff при следующем обновлении.
+3. **Твои дополнения** — в отдельном файле `EXTENSIONS.md` рядом с `SKILL.md`. Не редактируй оригинал — это сломает diff при следующем обновлении.
 
 ---
 
@@ -164,7 +162,7 @@ with text without explicitly asking for copy help.
 - В `CHANGELOG.md` (на уровне репозитория) — запись формата:
   ```
   ## 2026-05-12
-  - `skills/ux-writing/microcopy` 1.0.0 → 1.1.0: добавлена секция про error states
+  - `skills/ux-writing` 1.0.0 → 1.1.0: добавлена секция про error states
   ```
 - Зеркала не версионируются твоим semver — у них дата снапшота из `ATTRIBUTION.md`.
 

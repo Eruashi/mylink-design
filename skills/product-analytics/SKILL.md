@@ -1,13 +1,13 @@
 ---
 name: product-analytics
 description: Use this skill when a designer needs to choose, define, or sanity-check product metrics for a feature or screen. Trigger on requests like "what metric should I track for this feature", "how do I measure success of X", "is this a good metric", "what's our North Star", "help me set up a funnel", "which numbers prove this works", or any mention of HEART, AARRR, North Star, retention, conversion, activation, funnels, KPIs, cohorts, guardrail metrics, vanity metrics. Also trigger when a designer is about to hand off a feature and there's no defined way to measure whether it worked. This skill helps pick the right metric and avoid bad ones — it does not cover statistical analysis, sample size math, or running A/B tests in depth.
-version: 1.0.0
+version: 1.0.1
 language: ru
 domain: product-analytics
 status: stable
-last_updated: 2026-05-12
+last_updated: 2026-07-02
 depends_on: []
-related: [ux-writing, design-critique, ux-research]
+related: [ux-writing, ux-research, mirrors/anthropic/design-critique]
 tags: [metrics, heart, aarrr, north-star, funnel, retention, conversion, guardrail-metrics, vanity-metrics]
 mirrors: null
 ---
