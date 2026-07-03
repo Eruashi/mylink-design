@@ -1,7 +1,7 @@
 ---
 name: product-design
 description: Use this skill whenever a designer takes on a feature, screen, or scenario end-to-end — from a raw task or PM ask through to a flow and screen states ready to hand off. Trigger on requests like "spec this feature", "what should the flow be for X", "help me scope this — the requirements are vague", "walk me through the user journey", "how should this screen behave", "let's benchmark how other products solve this before designing", "design a feature for [role]", "this is a nonlinear scenario, need a flow chart", or any mention of user flow, user journey, feature requirements, scenario design, or a ТЗ that needs to become a screen. This skill owns the design process itself — requirements intake, benchmarking, solution choice, flow, and state/behavior spec. It does NOT cover formal research methods like interviews or usability tests (ux-research), component-level decisions once a screen design exists (design-systems), perception/heuristic theory behind a decision (ux-ui-theory), interface copy (ux-writing), or visual polish and layout hierarchy (graphic-design).
-version: 1.0.1
+version: 1.0.3
 language: ru
 domain: product-design
 status: stable
@@ -42,6 +42,7 @@ mirrors: null
 
 Командные принципы, обязательные для этого процесса (`team/design-principles.md`):
 
+- **№2 — Мобильная версия — не «потом».** Как решение живёт на мобильном (Flutter-приложение сотрудника и/или web-адаптив) продумывается в этой же задаче — специфика и чек-лист в `references/mobile.md`.
 - **№5 — Flow chart обязателен для нелинейных сценариев.** Больше одного экрана и есть ветвления → флоу рисуется, не держится в голове.
 - **№7 — Контекст задачи фиксируется дизайнером.** Устная договорённость с PM — не источник истины, пока не записана.
 - **№8 — Решение упрощает пользователю, а не команде.** Фича сложнее для пользователя ради удобства бизнеса — шаг назад, даже если так проще реализовать.
@@ -63,7 +64,7 @@ mirrors: null
 ## Формат вывода
 
 - **Спецификация фичи** — по `templates/design-spec.md`: контекст и проблема, кто страдает, метрики, варианты решения с обоснованием, флоу (если нелинейный), состояния и поведение экрана.
-- **Флоу** — flow chart (текстовое описание узлов и переходов, если визуального инструмента нет под рукой) для любого сценария с ветвлением.
+- **Флоу** — flow chart по нотации `templates/flow-chart-notation.md` (текстовое описание узлов и переходов, если визуального инструмента нет под рукой) для любого сценария с ветвлением.
 - **Состояния/поведение** — таблица или список «состояние → что видит пользователь → при каком условии наступает», без пропусков по восьми стейтам.
 
 ## Анти-паттерны

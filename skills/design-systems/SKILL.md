@@ -1,7 +1,7 @@
 ---
 name: design-systems
 description: Use this skill whenever a designer works with the team's design system — deciding whether to reuse an existing component, extend it, build a local one, or escalate a change to the shared DS; enforcing token discipline (no magic numbers); ensuring full component state coverage; grounding component decisions in Mantine's API and behavior; splitting vs unifying components; auditing a screen or component for DS compliance; or documenting a component. Trigger on requests like "is there a component for this in the DS", "extend it or make a local component", "check this against the DS", "which states are missing", "how should this behave in Mantine", "split or keep it unified", "is this a breaking change to a shared component", or review notes like "not from DS", "magic number", "no focus / disabled state". This skill covers applying and auditing the existing Mantine-based DS — it does NOT cover building a design system from scratch or generic token taxonomy (see the Anthropic design-system mirror), visual polish and hierarchy (graphic-design), perception theory (ux-ui-theory), holistic UX review (design-critique), or dev handoff packaging (design-handoff).
-version: 1.0.1
+version: 1.0.2
 language: ru
 domain: design-systems
 status: stable
@@ -42,7 +42,7 @@ mirrors: null
 - **Только токены.** Magic number и чужая палитра в макете — запах (`team/design-principles.md`, принцип №3). Любая правка формулируется в терминах токенов и шкалы, не в абсолютных пикселях «на глаз».
 - **Локальный компонент, если в DS его нет.** Повторяющийся паттерн без аналога в DS — это не «нарисовать поверх», а создать локальный компонент с правильной структурой, с прицелом на переиспользование (принцип №4).
 - **Все стейты всегда.** default, hover, active, focus, disabled, loading, error, empty — полный набор обязателен (принцип №1). Отсутствие стейта = повод вернуть на доработку.
-- **Mobile не «потом».** Компонент продумывается и для web-адаптива, и для Flutter-мобилки (принцип №2). Возможности и ограничения Flutter учитываются отдельно от Mantine.
+- **Mobile не «потом».** Компонент продумывается и для web-адаптива, и для Flutter-мобилки (принцип №2). Возможности и ограничения Flutter учитываются отдельно от Mantine. Мобильная специфика компонентов — `skills/product-design/references/mobile.md`.
 - **Консистентность.** Похожие компоненты на разных экранах решаются одинаково; иначе — зафиксированная причина (принцип №9).
 - **Координация общих компонентов.** Breaking change в shared-компоненты не коммитится в одиночку — согласуется со всеми дизайнерами (кросс-функциональное соглашение, `team/profile.md`).
 - **WCAG AA — обязательный стандарт.** Контраст и работа с цветом побеждают любые личные и эстетические соображения (правило приоритезации из `ROUTER.md`). При конфликте «красиво vs контраст» — называй конфликт и чини в пользу контраста.
@@ -61,7 +61,7 @@ mirrors: null
    - **Эскалировать в общий DS** — решение трогает shared-компоненты. Это согласование со всеми дизайнерами, не solo-коммит. Breaking change в общий компонент — стоп, на обсуждение.
 3. **Сверься с Mantine.** Что даёт база, какие у неё API-ограничения, как устроены поведение и структура. Решение должно быть реализуемо поверх Mantine, а не требовать переписать базовое поведение «с нуля» под видом косметики.
 4. **Реши дробление.** Один компонент или семейство? Дробим, когда объединение плодит конфликтующие пропы и стейты; держим единым, когда варианты живут одной логикой. Критерий — чистота пропов и удобство вставки готового компонента в кейс.
-5. **Прогони полноту.** Anatomy (все части) + все восемь стейтов + cross-platform (web-адаптив и Flutter) + a11y-gate (контраст 4.5:1 / 3:1, focus visible, информация не только цветом, touch ≥ 44pt на mobile) + локализация при +30%.
+5. **Прогони полноту.** Anatomy (все части) + все восемь стейтов + cross-platform (web-адаптив и Flutter) + a11y-gate (контраст 4.5:1 / 3:1, focus visible, информация не только цветом, touch ≥ 44pt на mobile) + локализация при +30%. Для плотных таблиц, расписаний и дашбордов — готовые паттерны (сортировка, фильтры, пагинация/виртуализация, sticky, стейты empty/no-results) в `references/data-tables.md`.
 6. **Задокументируй.** Оформи по `templates/component-doc.md`: когда использовать / когда НЕ использовать, anatomy, variants, sizes, props, states, tokens.
 
 ### Часть B — DS-audit (компонент / экран на соответствие)

@@ -53,6 +53,8 @@
 | Графический дизайн | `skills/graphic-design/` | готов · v1.0.0 |
 | Брендинг | `skills/branding/` | готов · v1.0.0 |
 
+> Скиллы могут иметь `references/` — глубокие материалы, грузятся по требованию (`SCHEMA.md` §1). Сейчас: `skills/product-design/references/mobile.md` (мобильная специфика), `skills/design-systems/references/data-tables.md` (плотные данные, таблицы, дашборды).
+
 ### `/mirrors/anthropic/` — зеркала проверенных скиллов
 
 | Скилл | Путь |
@@ -79,6 +81,9 @@
 | `templates/component-doc.md` | Документация компонента дизайн-системы |
 | `templates/skill-skeleton.md` | Болванка нового `SKILL.md` (шаг 3 в `CONTRIBUTING.md` §1) |
 | `templates/project-template.md` | Болванка проекта для `team/current-projects.md` |
+| `templates/interview-guide.md` | Гайд глубинного интервью (discovery) |
+| `templates/flow-chart-notation.md` | Нотация user flow: узлы, переходы, edge cases |
+| `templates/brand-guidelines-skeleton.md` | Болванка визуального бренд-гайда MyStartups |
 
 ### `/frameworks/` — быстрые справочники (cheatsheets)
 
@@ -87,6 +92,7 @@
 | `frameworks/nielsen-heuristics.md` | 10 эвристик юзабилити Нильсена |
 | `frameworks/gestalt-principles.md` | Принципы восприятия формы (Gestalt) |
 | `frameworks/laws-of-ux.md` | Законы UX: Фиттс, Хик, Миллер, Якоб |
+| `frameworks/cognitive.md` | Когнитивная семья: cognitive load, mental models, recognition over recall |
 | `frameworks/jtbd.md` | Jobs to Be Done — методология команды |
 
 **Сознательно не заводятся отдельными файлами** (контент уже покрыт, дублировать — против принципа «ссылаться, не перепечатывать»):
@@ -289,6 +295,6 @@ claude plugin install design@knowledge-work-plugins
 
 ---
 
-*Локальных ресурсов: 4 team-файла + people (README, _template, папки дизайнеров) + 8 доменных скиллов + 7 зеркал + 8 шаблонов + 4 фреймворка + evals + BACKLOG.  
+*Локальных ресурсов: 4 team-файла + people (README, _template, папки дизайнеров) + 8 доменных скиллов (+ 2 references) + 7 зеркал + 11 шаблонов + 5 фреймворков + evals + BACKLOG.  
 70+ внешних скиллов как fallback.  
 Обновлено: 2026-07-03.*

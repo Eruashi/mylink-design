@@ -1,7 +1,7 @@
 ---
 name: ux-ui-theory
 description: Use this skill when a designer needs to diagnose WHY a screen or solution is hard to use — naming the specific theory principle that's broken. Trigger on requests like "why does this screen feel hard", "which usability principle does this violate", "is this too much cognitive load", "users keep missing this — why", "what law explains this", "this menu has too many options", "people expect this to work differently", or any mention of Nielsen heuristics, Gestalt, Fitts, Hick, Miller, cognitive load, mental models, recognition vs recall, perception. This skill diagnoses which principle is at play and what it means for the user — it does NOT cover academic theory depth, neuroscience, design history, or research methods for testing hypotheses.
-version: 1.0.2
+version: 1.0.3
 language: ru
 domain: ux-ui-theory
 status: stable
@@ -71,7 +71,7 @@ mirrors: null
 
 ### Шаг 3. Назови конкретный принцип
 
-Внутри семьи назови конкретику. Не «что-то с восприятием», а «нарушен принцип близости Gestalt — связанные поля разнесены, несвязанные стоят вплотную». За точными формулировками иди в `frameworks/`: семьи эвристик, восприятия и законов покрыты файлами, по когнитивной семье отдельного справочника пока нет (детали — в «Ограничениях команды»).
+Внутри семьи назови конкретику. Не «что-то с восприятием», а «нарушен принцип близости Gestalt — связанные поля разнесены, несвязанные стоят вплотную». За точными формулировками иди в `frameworks/`: все четыре семьи покрыты файлами — эвристики, восприятие, законы и когнитивное (`frameworks/cognitive.md`).
 
 ### Шаг 4. Переведи принцип в следствие для пользователя
 
@@ -105,7 +105,7 @@ mirrors: null
 [что блокирует задачу пользователя — вперёд; что просто неоптимально — потом]
 
 ### Оговорка про источник
-[если фреймворк, на который ссылаемся, ещё не создан в frameworks/ — честно сказать]
+[все четыре семьи покрыты в frameworks/; если всё же ссылаешься на ещё не созданный справочник — честно сказать]
 ```
 
 Не выдавай пересказ теории и не сыпь терминами без перевода. Каждый названный принцип — обязательно со следствием для пользователя.
@@ -121,15 +121,16 @@ mirrors: null
 
 ## Ограничения команды (важно — читать всегда)
 
-### Фреймворки созданы частично
+### Фреймворки: все четыре семьи покрыты
 
-По плану репозитория голые справочники по теории живут в `frameworks/` — а сам скилл на них **ссылается**, не перепечатывает (`CONTRIBUTING.md`, раздел 4). Текущее состояние:
+По плану репозитория голые справочники по теории живут в `frameworks/` — а сам скилл на них **ссылается**, не перепечатывает (`CONTRIBUTING.md`, раздел 4). Все четыре семьи покрыты файлами:
 
-- **Покрыты файлами** — семьи «эвристики», «восприятие» и «законы»:
-  `frameworks/nielsen-heuristics.md`, `frameworks/gestalt-principles.md`, `frameworks/laws-of-ux.md`.
-  Когда нужна точная формулировка принципа из этих семей — бери её из соответствующего файла, не из памяти.
-- **Пока не покрыты** — семья «когнитивное» (cognitive load, mental models, recognition over recall) отдельного файла в `frameworks/` не имеет. По ней скилл работает на общих формулировках из раздела «Четыре семьи»; когда нужна развёрнутая формулировка — честно говори, что отдельного справочника пока нет.
-- Не выдумывай и не раздувай теорию внутри скилла. Скилл — это метод диагностики, а не учебник. Когда `frameworks/` пополнится файлом по когнитивной семье — добавить сюда ссылку.
+- **Эвристики** — `frameworks/nielsen-heuristics.md`
+- **Восприятие** — `frameworks/gestalt-principles.md`
+- **Законы** — `frameworks/laws-of-ux.md`
+- **Когнитивное** — `frameworks/cognitive.md` (cognitive load, mental models, recognition over recall)
+
+Когда нужна точная формулировка принципа — бери её из соответствующего файла, не из памяти. Не выдумывай и не раздувай теорию внутри скилла: скилл — это метод диагностики, а не учебник.
 
 ### B2B HR Tech — когнитивная нагрузка критичнее обычного
 

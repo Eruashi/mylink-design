@@ -1,7 +1,7 @@
 ---
 name: graphic-design
 description: Use this skill when a designer needs to make a product UI screen visually work — composition, visual hierarchy, layout, spacing, typography, color, contrast, alignment, rhythm. Trigger on requests like "this screen feels off but I don't know why", "fix the visual hierarchy here", "how do I lay this out", "what's wrong with the spacing", "is this typography ok", "too much color noise", "the screen looks cluttered / flat / unbalanced", or any review where the complaint is visual rather than behavioral. This skill applies graphic-design fundamentals to product interfaces — it does NOT cover posters, banners, marketing key visuals, or illustration work.
-version: 1.0.2
+version: 1.0.3
 language: ru
 domain: graphic-design
 status: stable
@@ -67,7 +67,7 @@ mirrors: null
 - Элементы выровнены по общим осям или «плавают»? Любое невыровненное — кандидат на исправление.
 - Сетка соблюдается? В наших продуктах база — 8pt (см. раздел про ограничения команды).
 - Группы читаются как группы — за счёт пространства, а не только рамок?
-- Плотность адекватна задаче? В B2B HR Tech высокая плотность нормальна, но плотность ≠ хаос.
+- Плотность адекватна задаче? В B2B HR Tech высокая плотность нормальна, но плотность ≠ хаос. Для таблиц и дашбордов — визуальные паттерны плотности в `skills/design-systems/references/data-tables.md`.
 
 ### Шаг 4. Проверь типографику
 

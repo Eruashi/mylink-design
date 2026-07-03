@@ -1,7 +1,7 @@
 ---
 name: ux-research
 description: Use this skill when a designer needs to plan, run, or make sense of user research — formulating a research question, choosing a method, building an interview guide or usability test, analyzing findings, or turning insights into a report. Trigger on requests like "I need to research X", "how should I test this", "what method fits this question", "help me write an interview guide", "we have interview transcripts — what now", "is my research question right", "how to validate this assumption", or any mention of interviews, usability tests, surveys, diary studies, research plans, synthesis, or research reports in a product-design context. This skill makes a designer self-sufficient in ad-hoc research without a dedicated UX-researcher — it does NOT cover building a research practice for the team, academic research methodology, or product analytics (those are other domains).
-version: 1.0.2
+version: 1.0.3
 language: ru
 domain: ux-research
 status: stable
@@ -75,7 +75,7 @@ mirrors: null
 Скилл не пишет шаблоны заново — они уже есть:
 
 - **Юзабилити-тест** → `templates/usability-test-script.md`. В нём задачи (не вопросы!), скринер, post-task questions, антипаттерны модератора. Бери и заполняй.
-- **Интервью** → структура interview guide из зеркала `mirrors/anthropic/user-research` (Warm-up → Context → Deep dive → Reaction → Wrap-up). Формализованного шаблона интервью-гайда в репозитории пока нет (см. «Ограничения»), но структура из зеркала рабочая.
+- **Интервью** → `templates/interview-guide.md`: структура Warm-up → Context → Deep dive → Reaction → Wrap-up из зеркала `mirrors/anthropic/user-research`, плюс блоки research question + решение, скринер, JTBD-вопросы и согласие на запись/ПД. Бери и заполняй.
 - **Research plan / отчёт** → `templates/research-report.md` как форма финального деливерабла; план исследования собирается из тех же блоков (метод, выборка, вопросы, ограничения).
 
 Не выдумывай свою структуру — шаблоны уже несут проверенный каркас.
@@ -193,7 +193,7 @@ Quantitative-часть ограничена тем, что уже трекае�
 - **Зеркало `mirrors/anthropic/user-research`** — методы, структура interview guide, фреймворки анализа. Скилл его *использует*, не дублирует. Шаги 2, 3 и 4 метода ссылаются туда.
 - **Зеркало `mirrors/anthropic/research-synthesis`** — фаза анализа. Скилл `ux-research` ведёт исследование до synthesis, дальше — метод живёт в зеркале.
 - **`frameworks/jtbd.md`** — методология формулировки research questions через работу, не через демографию; анализ через работу, не через мнение. Связь с JTBD — на Шагах 1 и 5.
-- **Шаблоны** `templates/usability-test-script.md`, `templates/research-report.md` — конечные деливераблы. Скилл отсылает к ним, не пересочиняет.
+- **Шаблоны** `templates/interview-guide.md`, `templates/usability-test-script.md`, `templates/research-report.md` — конечные деливераблы. Скилл отсылает к ним, не пересочиняет.
 - **Цепочка из `ROUTER.md`:** `ux-research → research-synthesis → design-critique` — инсайты ресёрча применить к текущему макету.
 - **Successor:** `skills/product-design` (применение инсайтов в решении), `skills/ux-writing` (переписать тексты по результатам), `skills/product-analytics` (валидация инсайтов метриками), `mirrors/anthropic/design-critique` (проверка решения на ревью).
 - **Conflicts:** прямых конфликтов нет. Но обязательные стандарты из `team/design-principles.md` побеждают любые ресёрч-обоснования. Нельзя через ресёрч обосновать dark pattern, даже если «пользователи готовы»; нельзя обосновать обход a11y, даже если «целевая аудитория не нуждается».
@@ -203,7 +203,7 @@ Quantitative-часть ограничена тем, что уже трекае�
 - `mirrors/anthropic/user-research` — таблица методов и структуры
 - `mirrors/anthropic/research-synthesis` — структура анализа
 - `frameworks/jtbd.md` — JTBD как командная методология ресёрча
-- `templates/usability-test-script.md`, `templates/research-report.md` — шаблоны деливераблов
+- `templates/interview-guide.md`, `templates/usability-test-script.md`, `templates/research-report.md` — шаблоны деливераблов
 - Steve Portigal — «Interviewing Users» (классика интервью)
 - Erika Hall — «Just Enough Research» (прагматичный ресёрч)
 - Teresa Torres — «Continuous Discovery Habits» (направление развития команды, не системная практика)

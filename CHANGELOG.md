@@ -38,6 +38,45 @@
 
 ---
 
+## 2026-07-03 — Проход 4: references (mobile, data-tables) — чистый вариант C, без новых доменов
+
+Закрытие BACKLOG №2 (data-tables) и снятие мобильной части №8 через cross-cutting references, без выделения новых доменов (выбран чистый вариант C). Governance-файлы (SCHEMA, ROUTER, PROJECT_INSTRUCTIONS, CONTRIBUTING) не тронуты.
+
+### Added
+- `skills/product-design/references/mobile.md` — мобильная специфика: две поверхности (Flutter-приложение сотрудника, web-адаптив на Mantine), чек-лист «что меняется на мобилке», tap targets ≥ 44pt, стейты без hover, Flutter-ограничения, геолокация-edge. Дом — product-design, кросс-ссылка из design-systems.
+- `skills/design-systems/references/data-tables.md` — плотные данные, таблицы, дашборды: anatomy, паттерны (сортировка, фильтры, пагинация/виртуализация, sticky, bulk), стейты (empty vs no-results/loading/error), плотность + cognitive load, адаптив, Mantine Table + локальные компоненты WTM. Дом — design-systems, кросс-ссылка из graphic-design.
+
+### Changed
+- `skills/product-design/SKILL.md` 1.0.2 → 1.0.3 — в «Контекст и принципы» добавлен принцип №2 (мобильная версия) со ссылкой на `references/mobile.md`.
+- `skills/design-systems/SKILL.md` 1.0.1 → 1.0.2 — пойнтер на `references/data-tables.md` (Метод, полнота) и кросс-ссылка на `references/mobile.md` (принцип «Mobile не потом»).
+- `skills/graphic-design/SKILL.md` 1.0.2 → 1.0.3 — в шаге про плотность/layout ссылка на `skills/design-systems/references/data-tables.md`.
+- `BACKLOG.md` — закрыт №2 (data-tables покрыт reference); №8 переформулирован (мобильная специфика покрыта reference, открыт только вопрос выделения домена).
+- `INDEX.md` — блок references под каталогом скиллов; футер (+2 references).
+- `evals/test-prompts.md` — по disclosure-кейсу на каждый reference (mobile → product-design, data-tables → design-systems).
+
+### Notes
+- Чистый вариант C: новые домены не заводились, `description` и триггеры скиллов не менялись — перепрогон evals не требуется (добавлены только disclosure-кейсы). Вопрос выделения mobile в 9-й домен остаётся в BACKLOG №8 (командное решение).
+
+## 2026-07-03 — Проход 3: templates + frameworks (interview-guide, flow-chart-notation, brand-guidelines-skeleton, cognitive) + ripple
+
+Закрытие дыры покрытия из `BACKLOG.md` (№5) и заготовки под `CONTRIBUTING.md` §4 (templates/frameworks). Основание: `REVIEW-2026-07.md`, `FIXES-2026-07.md`, `BACKLOG.md`.
+
+### Added
+- `frameworks/cognitive.md` 1.0.0 — семья «когнитивное» для `skills/ux-ui-theory`: cognitive load, mental models, recognition over recall (рабочая память — ссылкой на закон Миллера в `laws-of-ux.md`). Закрывает BACKLOG №5.
+- `templates/interview-guide.md` 1.0.0 — гайд глубинного интервью: research question + решение, скринер, JTBD-блок, согласие на запись/ПД (РК), структура Warm-up → Context → Deep dive → Reaction → Wrap-up.
+- `templates/flow-chart-notation.md` 1.0.0 — нотация user flow под принцип №5: типы узлов, обязательные edge cases (empty/error/loading/отмена), правила именования, текстовый формат, мини-пример.
+- `templates/brand-guidelines-skeleton.md` 1.0.0 — болванка визуального бренд-гайда MyStartups (логотип, палитра с колонкой токена DS, типографика, носители, таблица бренд/DS); голос бренда остаётся в `team/brand-tone.md`. Заготовка под BACKLOG №6.
+
+### Changed
+- `skills/ux-research/SKILL.md` 1.0.2 → 1.0.3 — Шаг 3: интервью-гайд теперь `templates/interview-guide.md` (фраза «формализованного шаблона пока нет» убрана); шаблон добавлен в «Связи» и «Источники».
+- `skills/ux-ui-theory/SKILL.md` 1.0.2 → 1.0.3 — все четыре семьи фреймворков покрыты (добавлен `frameworks/cognitive.md`); поправлены Шаг 3, «Ограничения команды» и оговорка в «Формате вывода».
+- `skills/product-design/SKILL.md` 1.0.1 → 1.0.2 — «Формат вывода»: флоу со ссылкой на `templates/flow-chart-notation.md`.
+- `BACKLOG.md` — закрыт №5 (frameworks/cognitive); №6 обновлён (скелет создан); добавлены кандидаты: mobile-design (9-й домен), формы/валидация (references в design-systems), RBAC/роли (references в product-design).
+- `INDEX.md` — 3 новых шаблона и `frameworks/cognitive.md` в каталог; футер обновлён (11 шаблонов, 5 фреймворков).
+
+### Notes
+- Перепрогон evals не требуется: `description` и триггеры скиллов не менялись — только `version`/`last_updated` и указанные строки тела.
+
 ## 2026-07-03 — Проход 2: токен-диета, деперсонализация, Cowork-режим, EXTENSIONS, BACKLOG
 
 По утверждённому списку П1–П9 + гигиена (см. `FIXES-2026-07.md`, «Проход 2»).
