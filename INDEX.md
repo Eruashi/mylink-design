@@ -201,6 +201,7 @@
 
 | Скилл | Raw-ссылка |
 |---|---|
+| Canvas Design — постеры, арт, статичная графика (Anthropic) | `https://raw.githubusercontent.com/anthropics/skills/main/skills/canvas-design/SKILL.md` |
 | Infographic Creator — AntV, 50+ шаблонов | `https://raw.githubusercontent.com/antvis/chart-visualization-skills/refs/heads/master/skills/infographic-creator/SKILL.md` |
 | CSS Border Gradient | `https://raw.githubusercontent.com/MengTo/Skills/main/agent-skills/web-design/css-border-gradient/SKILL.md` |
 
