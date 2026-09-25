@@ -38,6 +38,16 @@
 
 ---
 
+## 2026-09-25 — Перенос контекста из чата + стандарт ответа
+
+### Added
+- `CLAUDE.md`, `docs/` (context-from-chat, roadmap, research-backlog, problem, audit-2026-09-25, knowledge-map-2026-09-25, brainstorm), `templates/status-file.md`, `templates/skill-feedback.md`, `figma-status/core-kit/sidebar.md` — перенос контекста и исследование проблемы.
+
+### Changed
+- `PROJECT_INSTRUCTIONS.md` — раздел «Формат ответа» (вывод → суть → следующий шаг, ~150 слов, строка покрытия в ревью, критичные риски всегда в сути); блок «Использованные скиллы» — только по запросу; пробелы в файлах не упоминаются, если не меняют ответ; `tone-of-voice.md` задаёт стиль текстов от имени пользователя, не формат ответов.
+- `CLAUDE.md` — формат общения ссылается на раздел PI.
+- `SCHEMA.md`, `people/README.md` — упоминания блока «Использованные скиллы» под новое правило.
+
 ## 2026-07-03 — Проход 5: team — tech-design-review + глоссарий brand-tone
 
 Закрытие BACKLOG №1 (tech-design-review) и №7 (глоссарий brand-tone). Документируют и формализуют уже существующий командный контекст (из `profile.md` / `design-principles.md` / `current-projects.md`); пробелы помечены [заполнить] для команды.
