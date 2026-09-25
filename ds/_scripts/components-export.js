@@ -67,7 +67,7 @@ for (const PID of PAGE_IDS) {
   let budget = MAX_NODES, partial = false;
   const c = [], simple = [];
   // одиночные COMPONENT без properties (иконки, ассеты) — только имя|id, без подсчёта
-  const rich = all.filter(n => n.type === 'COMPONENT_SET' || Object.keys(n.componentPropertyDefinitions).length);
+  const rich = all.filter(n => { if (n.type === 'COMPONENT_SET') return true; try { return Object.keys(n.componentPropertyDefinitions).length > 0; } catch (e) { return true; } });
   for (const n of all) if (!rich.includes(n)) simple.push(n.name + '|' + n.id);
   for (const n of rich.slice(0, MAX_COMPS)) {
     const o = { n: n.name, id: n.id, t: n.type === 'COMPONENT_SET' ? 'S' : 'C' };
