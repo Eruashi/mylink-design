@@ -21,14 +21,15 @@
  *   MAX_SIMPLE    — сколько имён «простых» компонентов (одиночный COMPONENT без properties) отдавать.
  * Выход: компактный JSON [{p,id,nc,c:[{n,id,t,v,pr,ps,tp,tn,oc}],sc,s,g:[{n,id,f}],partial}]
  *   t: S — COMPONENT_SET, C — одиночный COMPONENT; v — число вариантов; pr — properties «имя:тип» (V/B/T/I/S);
- *   ps — publish status (C=CURRENT, U=UNPUBLISHED, C…=CHANGED);
+ *   ps — publish status (C=CURRENT, Ch=CHANGED — есть неопубликованные правки, U=UNPUBLISHED);
  *   tp — краски [Tokens, old, без переменной]: видимые SOLID/GRADIENT fills+strokes;
  *   tn — числа [Tokens, old, без переменной]: padding×4 и itemSpacing (>0) у auto-layout, cornerRadius (>0),
  *        strokeWeight (если есть stroke), у TEXT — одно поле типографики (fontSize/fontFamily/lineHeight…);
  *   oc — старые коллекции и число привязок; «(local)» — коллекция не из библиотеки;
  *   Tokens = коллекция remote и её key совпадает с коллекцией библиотеки «🧩 Tokens».
  *   Обходятся варианты и их потомки; сам COMPONENT_SET и вложенные INSTANCE (иконки и т.п.) не считаются.
- *   g — гайдлайн-фреймы: f = new<N> (N пронумерованных секций «NN — …»), old-checklist, old-MoSCoW, other.
+ *   g — гайдлайн-фреймы: f = new<N> (N пронумерованных секций «NN — …»), sectioned (_Status + «Section — …»),
+ *       old-MoSCoW, old-checklist, other.
  */
 const PAGE_IDS = ['8253:5009'];
 const CALC_TOKENS = true;
@@ -76,7 +77,7 @@ for (const PID of PAGE_IDS) {
       const d = n.componentPropertyDefinitions;
       o.pr = Object.keys(d).map(k => k.replace(/#[\d:]+$/, '') + ':' + d[k].type[0]);
     } catch (e) { o.pr = ['err']; }
-    try { o.ps = (await n.getPublishStatusAsync())[0]; } catch (e) { o.ps = '?'; }
+    try { o.ps = { CURRENT: 'C', CHANGED: 'Ch', UNPUBLISHED: 'U' }[await n.getPublishStatusAsync()] || '?'; } catch (e) { o.ps = '?'; }
     if (CALC_TOKENS && budget > 0) {
       // P — краски (fills+strokes), N — числа/типографика; [Tokens, old, unbound]
       const tk = { P: [0, 0, 0], N: [0, 0, 0] }, oc = {};
@@ -123,10 +124,14 @@ for (const PID of PAGE_IDS) {
       if ((ch.type === 'FRAME' || ch.type === 'SECTION') && RE_G.test(ch.name)) {
         const kids = ch.children || [];
         const numbered = kids.filter(k => /^\d{2}\s*[—-]/.test(k.name)).length;
-        let f = numbered >= 8 ? 'new' + numbered : 'old';
-        if (f === 'old') {
-          const t = ch.findAllWithCriteria({ types: ['TEXT'] }).slice(0, 400).map(t => t.characters).join(' ');
-          f = /moscow|must have|should have/i.test(t) ? 'old-MoSCoW' : (/check ?list/i.test(ch.name) ? 'old-checklist' : 'other');
+        let f;
+        if (numbered >= 8) f = 'new' + numbered;                       // «01 — Обзор» … «13 — Делаем и не делаем»
+        else if (kids.some(k => k.name === '_Status') || kids.filter(k => /^Section —/.test(k.name)).length >= 3) f = 'sectioned';
+        else {
+          const t = ch.findAllWithCriteria({ types: ['TEXT'] }).slice(0, 300).map(t => t.characters).join(' ');
+          if (/moscow|\bmust\b|обязаны/i.test(t)) f = 'old-MoSCoW';     // «Требования и обновления»
+          else if (/check ?list/i.test(ch.name)) f = 'old-checklist';   // «Check list» (Head/Body), «checklist ds»
+          else f = 'other';
         }
         g.push({ n: ch.name, id: ch.id, f });
       } else walk(ch, depth + 1);
