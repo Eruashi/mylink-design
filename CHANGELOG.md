@@ -44,6 +44,8 @@
 - `ds/tokens.md` — все 573 переменные 🧩 Tokens (семантика с hex, примитивы, numbers, типографика, layout), текстовые стили, эффекты, правила и TODO.
 - `ds/components.md` — реестр Core kit: 148 наборов, статус, node, properties, % Tokens, гайдлайн; раздел «Не использовать».
 - `ds/illustrations.md` — 10 утверждённых иллюстраций и стиль.
+- `ds/component-props.md` — properties 128 компонентов со значениями и дефолтами.
+- `ds/decisions.md` — решения команды по DS (пишется руками).
 - `ds/_scripts/*.js` — read-only скрипты перевыгрузки через Figma MCP (`use_figma`).
 
 ### Changed
