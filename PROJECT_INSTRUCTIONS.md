@@ -148,6 +148,7 @@
 |---|---|---|
 | `product-design` | флоу, user flow, экран, фича, требования, user journey, scenario, ТЗ на фичу | `skills/product-design/` |
 | `design-systems` | компонент, токен, дизайн-система, паттерн, гайдлайн компонента, DS audit, component library | `skills/design-systems/` |
+| `design-systems/ds-token-update` | обнови / проверь токены в компоненте, переведи на Tokens, какие слои не на токенах, миграция компонента | `skills/design-systems/ds-token-update/` |
 | `ux-writing` | микрокопи, microcopy, текст кнопки, ошибка (как текст), empty state, onboarding text, tooltip, label, CTA | `skills/ux-writing/` |
 | `ux-research` | интервью, респондент, исследование, JTBD, opportunity, usability test, дискавери, research plan | `skills/ux-research/` |
 | `product-analytics` | метрика, фаннел, A/B, retention, conversion, HEART, North Star, AARRR, KPI, когорта | `skills/product-analytics/` |

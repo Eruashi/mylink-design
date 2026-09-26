@@ -26,6 +26,7 @@
 - После мерджа в `main` напомни синхронизировать Project Knowledge в claude.ai; если менялся `PROJECT_INSTRUCTIONS.md` — перевставить его в Settings проекта.
 
 ## Работа с Figma (если используешь Figma MCP)
+- По умолчанию Figma — **только чтение**. Запись — только когда я прямо прошу изменить файл и называю ветку.
 - В Core kit пишешь только в ветку, никогда в main.
 - Сначала читаешь ноды, потом пишешь.
 - После записи — самопроверка: перечитай изменённые ноды и выдай диф «было → стало».
@@ -33,5 +34,5 @@
 
 ## Конвенции
 - Status-файлы: `figma-status/<файл>/<компонент>.md` по `templates/status-file.md`.
-- Фидбек скиллов: `skills/<name>/feedback.md` по `templates/skill-feedback.md`.
+- Фидбек скиллов: `skills/<domain>/<skill-name>/feedback.md` (или `skills/<domain>/feedback.md` для доменного) по `templates/skill-feedback.md`.
 - Идеи, коннекторы, фишки для проверки: `docs/research-backlog.md`.

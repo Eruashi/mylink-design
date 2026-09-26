@@ -17,11 +17,12 @@ skills/<domain>/
 │   └── deep-topic-2.md
 ├── templates/          # Optional: шаблоны deliverables этого скилла
 │   └── output.md
-└── examples/           # Optional: good/bad примеры (выноси, если они большие)
-    └── case-study.md
+├── examples/           # Optional: good/bad примеры (выноси, если они большие)
+│   └── case-study.md
+└── feedback.md         # Optional: журнал реальных прогонов по templates/skill-feedback.md
 ```
 
-Если домен дорастёт до нескольких скиллов — допускается второй уровень `skills/<domain>/<skill-name>/SKILL.md`. Сейчас таких нет: все 8 доменов одноуровневые, и ссылки на скилл пишутся как `skills/<domain>` (так же — в блоке «Использованные скиллы», когда его запрашивают).
+Если домен дорастёт до нескольких скиллов — допускается второй уровень `skills/<domain>/<skill-name>/SKILL.md` (процессные скиллы под повторяющиеся задачи, например `skills/design-systems/ds-token-update/`). `name` второго уровня совпадает с `<skill-name>`, `domain` — с `<domain>`. Ссылки на доменный скилл пишутся как `skills/<domain>`, на процессный — `skills/<domain>/<skill-name>` (так же — в блоке «Использованные скиллы», когда его запрашивают).
 
 Корневой `SKILL.md` грузится **всегда**, когда триггерится скилл. Файлы из `references/`, `templates/`, `examples/` подтягиваются **по требованию** (progressive disclosure из стандарта Anthropic).
 

@@ -35,6 +35,13 @@
 
 ---
 
+## `design-systems/ds-token-update`
+
+| Запрос | Ожидается | Комментарий |
+|---|---|---|
+| «Проверь токены в Counter-badge — что не на Tokens?» | `design-systems/ds-token-update` | Аудит по умолчанию, Figma только читается; отчёт по `templates/review-report.md` со строкой покрытия. |
+| «Разбить Counter-badge и Dot-badge на один компонент или оставить два?» | `design-systems` (не `ds-token-update`) | Негативный кейс: вопрос про API компонента, не про токены. |
+
 ## `design-systems`
 
 | Запрос | Ожидается | Комментарий |

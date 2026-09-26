@@ -38,6 +38,25 @@
 
 ---
 
+## 2026-09-26 — ds-token-update 0.2.0
+
+### Changed
+- `skills/design-systems/ds-token-update/SKILL.md` 0.1.0 → 0.2.0 — по `feedback.md` (прогон Counter-badge): классы `old-twin` / `old-primitive` / `old-orphan`, правила уверенности (цветовая роль, solid ↔ alpha, state-токены), текстовый стиль целиком, группировка, единые колонки, поиск связанных тасок по `figma-status/**`, a11y одной строкой.
+- `ds/_scripts/component-token-audit.js` — подклассы old, карта переименований числовых токенов, флаг `mismatch`, непривязанные размеры.
+
+## 2026-09-26 — Скилл ds-token-update
+
+### Added
+- `skills/design-systems/ds-token-update/SKILL.md` 0.1.0 (draft) + `feedback.md` — аудит токенов в компоненте Core kit; применение в Figma — только по явной просьбе и в ветке.
+- `templates/review-report.md` — общий формат отчёта ревью.
+- `ds/_scripts/component-token-audit.js` — read-only сбор всех полей компонента с классификацией.
+
+### Changed
+- `SCHEMA.md` — второй уровень для процессных скиллов, `feedback.md` в структуре.
+- `CLAUDE.md` — Figma по умолчанию только чтение; путь `feedback.md`.
+- `PROJECT_INSTRUCTIONS.md` — строка триггеров `design-systems/ds-token-update`.
+- `evals/test-prompts.md` — 2 кейса для ds-token-update.
+
 ## 2026-09-26 — Карточки тасок
 
 ### Added
