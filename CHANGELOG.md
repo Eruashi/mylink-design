@@ -38,6 +38,15 @@
 
 ---
 
+## 2026-09-26 — ds-guideline 0.2.0: новая структура гайдлайна
+
+### Changed
+- `templates/component-guideline.md` — 13 секций Sidebar → 10 разделов по `docs/guideline-structure.md` (суть, дизайн, спецификация web, Flutter, служебное); ряды примеров вместо текста.
+- `skills/design-systems/ds-guideline/SKILL.md` 0.1.0 → 0.2.0 — по `feedback.md`: новая структура, `getInstancesAsync`, свободный гайд на странице, строка покрытия, вёрстка в стиле примера Tabs, TODO для Mantine/Flutter.
+
+### Added
+- `docs/guideline-structure.md` — брейншторм и решение по структуре.
+
 ## 2026-09-26 — Скилл ds-guideline
 
 ### Added
