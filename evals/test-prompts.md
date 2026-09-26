@@ -35,6 +35,12 @@
 
 ---
 
+## `design-systems/ds-guideline`
+
+| Запрос | Ожидается | Комментарий |
+|---|---|---|
+| «Напиши гайдлайн для Modal header по формату Sidebar» | `design-systems/ds-guideline` | Факты из Figma и `ds/`, правила без источника — `TODO: проверить`; файл в `ds/guidelines/`. |
+
 ## `design-systems/ds-token-update`
 
 | Запрос | Ожидается | Комментарий |

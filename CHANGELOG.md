@@ -38,6 +38,16 @@
 
 ---
 
+## 2026-09-26 — Скилл ds-guideline
+
+### Added
+- `templates/component-guideline.md` — 13 секций по эталону Sidebar `22381:36525`.
+- `skills/design-systems/ds-guideline/SKILL.md` 0.1.0 (draft) + `feedback.md` — гайдлайн компонента в `ds/guidelines/`; факты из Figma и `ds/`, правила без источника — `TODO`.
+
+### Changed
+- `PROJECT_INSTRUCTIONS.md` — строка триггеров `ds-guideline`, `ds/guidelines/` в шаге 4A.
+- `evals/test-prompts.md` — кейс ds-guideline.
+
 ## 2026-09-26 — ds-token-update 0.2.0
 
 ### Changed
