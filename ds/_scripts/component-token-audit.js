@@ -23,8 +23,8 @@
  *   family) и SOLID-краски (hex с альфой). Типичный случай — переменная из отключённой библиотеки: height привязан к
  *   Badge/Small/height = 16, а нода 20. Mismatch входит в ключ дедупа и собирается в summary.mismatches.
  *
- * Размеры без переменной: у корня каждого варианта — width/height всегда (sizing = HUG/FIXED в находке),
- *   у детей auto-layout (не ABSOLUTE) — width/height только при FIXED по этой оси (HUG/FILL пропускаются);
+ * Размеры без переменной: у корня варианта и у детей auto-layout (не ABSOLUTE) — width/height только при FIXED
+ *   по этой оси (HUG/FILL — производный размер, пропускаются; привязанные поля проверяются всегда, в т.ч. mismatch);
  *   minWidth/maxWidth/minHeight/maxHeight — если заданы (не null). Непривязанное → raw со значением.
  *   Привязанные width/height/min/max/opacity — у любой ноды, с проверкой mismatch.
  *
@@ -331,7 +331,7 @@ async function auditNode(x, ctx) {
   for (const k of SIZE) {
     if (!(k in x)) continue;
     const sz = k === 'width' ? x.layoutSizingHorizontal : x.layoutSizingVertical;
-    const report = isRoot || (inAL && sz === 'FIXED');
+    const report = (isRoot || inAL) && sz === 'FIXED'; // HUG/FILL — размер производный, не находка
     await numField(ctx, k, bv[k], x[k], { onlyBound: !report, sizing: sz });
   }
   for (const k of MINMAX) {
