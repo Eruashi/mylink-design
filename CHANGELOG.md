@@ -38,6 +38,19 @@
 
 ---
 
+## 2026-09-26 — Скилл ds-token-update
+
+### Added
+- `skills/design-systems/ds-token-update/SKILL.md` 0.1.0 (draft) + `feedback.md` — аудит токенов в компоненте Core kit; применение в Figma — только по явной просьбе и в ветке.
+- `templates/review-report.md` — общий формат отчёта ревью.
+- `ds/_scripts/component-token-audit.js` — read-only сбор всех полей компонента с классификацией.
+
+### Changed
+- `SCHEMA.md` — второй уровень для процессных скиллов, `feedback.md` в структуре.
+- `CLAUDE.md` — Figma по умолчанию только чтение; путь `feedback.md`.
+- `PROJECT_INSTRUCTIONS.md` — строка триггеров `design-systems/ds-token-update`.
+- `evals/test-prompts.md` — 2 кейса для ds-token-update.
+
 ## 2026-09-26 — Карточки тасок
 
 ### Added
