@@ -38,6 +38,49 @@
 
 ---
 
+## 2026-09-29 — ds-guideline 0.5.0 + гайдлайны Modal header и Tabs
+
+### Added
+- `ds/guidelines/tabs.md`, `figma-status/core-kit/tabs.md` — гайдлайн Tabs и открытые вопросы; вёрстка в ветке Figma `bRwFkumYDoKh1OQv5a5dYp` (`23741:1826`).
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.4.0 → 0.5.0 — по `feedback.md`: анатомия таблицей, подсчёт слов и лимит высоты, gotchas use_figma, «не подтвердилось» → status-файл, полный перебор вариантов вложенного компонента.
+- `templates/component-guideline.md`, `docs/guideline-structure.md` — анатомия таблицей.
+- `ds/guidelines/modal-header.md`, `figma-status/core-kit/modal-header.md` — v2 в Figma (`23637:1666`), без «Служебного», анатомия таблицей.
+
+## 2026-09-29 — ds-guideline 0.4.0: уроки сравнения с гайдом дизайнера
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.3.0 → 0.4.0 — по `feedback.md` (Tabs + сравнение с `19500:12562`): раздел «В интерфейсе», лимит плотности (≤ 600 слов, ≤ 3 таблиц), «почему» в левой колонке, вложенный компонент в «Анатомии», линейка размеров, пара «группа + элемент», проверка веса шрифта по состояниям, технические правила use_figma.
+- `templates/component-guideline.md` — раздел 8 «В интерфейсе», вложенный компонент в «Анатомии»; 10 разделов.
+- `docs/guideline-structure.md` — то же.
+
+## 2026-09-29 — ds-guideline 0.3.0: правила вёрстки, без «Служебного»
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.2.0 → 0.3.0 — по `feedback.md`: правила вёрстки в Figma по образцу Modal header v2 `23637:1666` (1600, две колонки, подложки, карточки с цветной линией, таблицы без заливки, без TODO на канвасе).
+- `templates/component-guideline.md` — 9 разделов: «Служебное» убрано, открытые вопросы — в status-файле.
+- `docs/guideline-structure.md` — структура принята.
+
+## 2026-09-26 — ds-guideline 0.2.0: новая структура гайдлайна
+
+### Changed
+- `templates/component-guideline.md` — 13 секций Sidebar → 10 разделов по `docs/guideline-structure.md` (суть, дизайн, спецификация web, Flutter, служебное); ряды примеров вместо текста.
+- `skills/design-systems/ds-guideline/SKILL.md` 0.1.0 → 0.2.0 — по `feedback.md`: новая структура, `getInstancesAsync`, свободный гайд на странице, строка покрытия, вёрстка в стиле примера Tabs, TODO для Mantine/Flutter.
+
+### Added
+- `docs/guideline-structure.md` — брейншторм и решение по структуре.
+
+## 2026-09-26 — Скилл ds-guideline
+
+### Added
+- `templates/component-guideline.md` — 13 секций по эталону Sidebar `22381:36525`.
+- `skills/design-systems/ds-guideline/SKILL.md` 0.1.0 (draft) + `feedback.md` — гайдлайн компонента в `ds/guidelines/`; факты из Figma и `ds/`, правила без источника — `TODO`.
+
+### Changed
+- `PROJECT_INSTRUCTIONS.md` — строка триггеров `ds-guideline`, `ds/guidelines/` в шаге 4A.
+- `evals/test-prompts.md` — кейс ds-guideline.
+
 ## 2026-09-26 — ds-token-update 0.2.0
 
 ### Changed

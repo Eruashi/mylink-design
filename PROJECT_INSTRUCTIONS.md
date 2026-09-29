@@ -89,6 +89,7 @@
 
 - `ds/components.md` — реестр компонентов Core kit: страница, node, статус, % Tokens, гайдлайн, список «Не использовать»;
 - `ds/component-props.md` — все properties компонентов со значениями и дефолтами (для ревью спек и API);
+- `ds/guidelines/<компонент>.md` — гайдлайны компонентов (черновики из репо; в Figma — после переноса);
 - `ds/tokens.md` — все токены 🧩 Tokens со значениями и правила;
 - `ds/illustrations.md` — утверждённые иллюстрации и стиль;
 - `ds/decisions.md` — решения команды по DS; приоритетнее выводов из сгенерированных файлов `ds/`;
@@ -149,6 +150,7 @@
 | `product-design` | флоу, user flow, экран, фича, требования, user journey, scenario, ТЗ на фичу | `skills/product-design/` |
 | `design-systems` | компонент, токен, дизайн-система, паттерн, гайдлайн компонента, DS audit, component library | `skills/design-systems/` |
 | `design-systems/ds-token-update` | обнови / проверь токены в компоненте, переведи на Tokens, какие слои не на токенах, миграция компонента | `skills/design-systems/ds-token-update/` |
+| `design-systems/ds-guideline` | гайдлайн компонента, задокументируй компонент, напиши гайдлайн, гайдлайн по формату Sidebar | `skills/design-systems/ds-guideline/` |
 | `ux-writing` | микрокопи, microcopy, текст кнопки, ошибка (как текст), empty state, onboarding text, tooltip, label, CTA | `skills/ux-writing/` |
 | `ux-research` | интервью, респондент, исследование, JTBD, opportunity, usability test, дискавери, research plan | `skills/ux-research/` |
 | `product-analytics` | метрика, фаннел, A/B, retention, conversion, HEART, North Star, AARRR, KPI, когорта | `skills/product-analytics/` |
