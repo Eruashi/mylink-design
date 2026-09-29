@@ -38,6 +38,16 @@
 
 ---
 
+## 2026-09-29 — ds-guideline 0.5.0 + гайдлайны Modal header и Tabs
+
+### Added
+- `ds/guidelines/tabs.md`, `figma-status/core-kit/tabs.md` — гайдлайн Tabs и открытые вопросы; вёрстка в ветке Figma `bRwFkumYDoKh1OQv5a5dYp` (`23741:1826`).
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.4.0 → 0.5.0 — по `feedback.md`: анатомия таблицей, подсчёт слов и лимит высоты, gotchas use_figma, «не подтвердилось» → status-файл, полный перебор вариантов вложенного компонента.
+- `templates/component-guideline.md`, `docs/guideline-structure.md` — анатомия таблицей.
+- `ds/guidelines/modal-header.md`, `figma-status/core-kit/modal-header.md` — v2 в Figma (`23637:1666`), без «Служебного», анатомия таблицей.
+
 ## 2026-09-29 — ds-guideline 0.4.0: уроки сравнения с гайдом дизайнера
 
 ### Changed
