@@ -32,14 +32,18 @@
 ## 3. Анатомия
 Пример: инстанс `Modal header, 📌 Type=Web, ↕ Size=lg, 📐 Align=Left`, `⬅️ Back`=true, `✅ Status`=true, текст «Ссылка для ИИ-скрининга создана» / «Скопируйте приглашение и отправьте его кандидату.» Рядом — `Type=Mobile, Size=lg, Align=Center` для маркеров 7 и 8.
 
-1. **Close button** (`Close button` `19079:20662`) — закрывает модалку
-2. **Back** (`arrow-left`) — возврат на предыдущий шаг
-3. **Status** (`OLD Badge` `9763:4426` в `Status container`) — статус рядом с заголовком
-4. **Title** (`Title`) — заголовок модалки, до 2 строк
-5. **Description** (`Description`) — пояснение под заголовком, до 3 строк
-6. **Top** (`Top`) — ряд: Back, Title, Status
-7. **Illustration** (слот `Illustration`) — картинка над текстом, только `Align=Center`
-8. **Sheet header** (`Sheet header` с `Drag handle`) — полоска свайпа, только `Type=Mobile`
+| № | Элемент | Что это (слой / компонент) | Обязательный | Стиль и токены |
+|---|---|---|---|---|
+| 1 | **Close button** | `Close button` `19079:20662` — закрывает модалку | нет (`✖️ Close`, по умолчанию true) | 44 × 44, круг 24, `icon/neutral/secondary` |
+| 2 | **Back** | `arrow-left` — возврат на предыдущий шаг | нет (`⬅️ Back`), только `Align=Left` | 24 (Mobile — 20), без состояний |
+| 3 | **Status** | `OLD Badge` `9763:4426` в `Status container` — статус рядом с заголовком | нет (`✅ Status`), только `Align=Left` | `OLD Badge` lg 28, `Color=Green` |
+| 4 | **Title** | текстовый слой `Title` — заголовок модалки, до 2 строк | да | `Heading/H4` (md — `H6`), `text/neutral/primary` |
+| 5 | **Description** | текстовый слой `Description` — пояснение под заголовком, до 3 строк | нет (`👁️ Description`) | `Body/sm-regular`, `text/neutral/secondary` |
+| 6 | **Top** | фрейм `Top` — ряд: Back, Title, Status | авто, только `Align=Left` | зазор `Spacing/spacing-2x-sm` (8) |
+| 7 | **Illustration** | слот `Illustration` — картинка над текстом | нет (`🏞️ Illustration`), только `Align=Center` | 120 (md — 112), зазор 16 |
+| 8 | **Sheet header** | `Sheet header` с `Drag handle` — полоска свайпа | нет (`🔘 Sheet header`), только `Type=Mobile` | `Drag handle` 48 × 4, `bg/neutral/quaternary` |
+
+Размеры и стили — для `Type=Web, Size=lg`, если не указано иначе; Mobile — в 9.
 
 `Drag handle` — слой, не компонент. `arrow-left` — иконка, не компонент.
 

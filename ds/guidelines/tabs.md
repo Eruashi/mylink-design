@@ -35,13 +35,17 @@ Flutter-строки нет: компонент web, Mobile-вариантов �
 ## 3. Анатомия
 Пример: инстанс `Tabs, ↕ Size=lg, 🖇️ Style=Filled, 🔲 Inverted=Yes` с тремя `Tab` («Опубликованные» активный, «Черновики», «Архивные»), и `Tabs, ↕ Size=lg, 🖇️ Style=Inline` для маркера 7.
 
-1. **Контейнер** (`Tabs`, слот `tabs`) — ряд табов, подложка у `Filled`
-2. **Tab активный** (`Tab`, `🔘 Active=Yes`) — выбранный вид, текст Medium
-3. **Tab неактивный** (`Tab`, `🔘 Active=No`) — остальные виды, текст Regular
-4. **Icon** (`magicoon`, `iconType`) — необязательная иконка перед текстом
-5. **Label** (`Tab`, `𝐓 Text `) — название, одна строка
-6. **Counter** (`Counter-badge`) — число после текста, необязательно
-7. **Индикатор** (`blue line`) — линия 2 снизу, только `Style=Inline`
+| № | Элемент | Что это (слой / компонент) | Обязательный | Стиль и токены |
+|---|---|---|---|---|
+| 1 | **Контейнер** | `Tabs`, слот `tabs` — ряд табов, подложка у `Filled` | да | `bg/pale/secondary-light` или белый (`Inverted=Yes`), `Radius/radius-md` |
+| 2 | **Tab активный** | `Tab`, `🔘 Active=Yes` — выбранный вид | да | `Body/sm-medium` (Medium), фон `bg/pale/secondary` |
+| 3 | **Tab неактивный** | `Tab`, `🔘 Active=No` — остальные виды | да | `Body/sm-regular` (Regular), без фона |
+| 4 | **Icon** | `magicoon`, `iconType` — иконка перед текстом | нет (`👁️ Show Icon `) | 16 (md — 20), `icon/*` как текст |
+| 5 | **Label** | текстовый слой `Tab` (`𝐓 Text `) — название, одна строка | да, кроме `Icon Only=Yes` | `Body/sm-*`, `text/*` по состоянию |
+| 6 | **Counter** | `Counter-badge` — число после текста | нет (`👁️ Show Сounter`) | `Size=md` 16, `Radius/radius-full`, `Caption/xxs-medium` |
+| 7 | **Индикатор** | `blue line` — линия 2 снизу | только `Style=Inline` | высота 2, `border/brand/primary` |
+
+Стили текста — для `Tab sm`; у `Tab md` — `Body/md-*`. Все значения по размерам и состояниям — в 9.
 
 `Counter-badge` — отдельный компонент Core kit (remote). `magicoon` — иконка по умолчанию в `iconType`, из другой библиотеки (remote).
 
