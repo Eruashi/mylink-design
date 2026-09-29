@@ -38,6 +38,13 @@
 
 ---
 
+## 2026-09-29 — ds-guideline 0.3.0: правила вёрстки, без «Служебного»
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.2.0 → 0.3.0 — по `feedback.md`: правила вёрстки в Figma по образцу Modal header v2 `23637:1666` (1600, две колонки, подложки, карточки с цветной линией, таблицы без заливки, без TODO на канвасе).
+- `templates/component-guideline.md` — 9 разделов: «Служебное» убрано, открытые вопросы — в status-файле.
+- `docs/guideline-structure.md` — структура принята.
+
 ## 2026-09-26 — ds-guideline 0.2.0: новая структура гайдлайна
 
 ### Changed
