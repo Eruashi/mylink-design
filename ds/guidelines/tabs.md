@@ -16,7 +16,7 @@
 |---|---|
 | Компонент в Core kit | `Tabs` `19398:16535` — 16 вариантов; `Tab` `19398:15862` — 128 вариантов. Страница ✅ Tabs |
 | Storybook | `TODO: фронты` |
-| Flutter | не применимо: Mobile-вариантов нет, компонент web |
+| Flutter | нет: компонент web, Mobile-вариантов в Core kit нет |
 | Статус и версия | ✅ в Core kit. Реестр (main, 2026-09-25): `Tab` 69%, `Tabs` 34% на 🧩 Tokens. В ветке старых переменных нет — см. 8. Версия и дата обновления — `TODO: проверить` |
 
 ## 2. Когда использовать
@@ -199,7 +199,7 @@
 - зазор 4 в `tab body` у `Inline, Icon Only=Yes` и в слоте `Tabs` md/lg (есть `Spacing/spacing-1x-xs`);
 - обводка контейнера `Tabs` 1.
 
-**Mantine:** компонент и пропсы ↔ `Style`, `Size`, `Inverted`, `Icon Only` — `TODO: фронты` (`Tabs` или `SegmentedControl` для `Filled`).
+**Mantine:** компонент и пропсы ↔ `Style`, `Size`, `Inverted`, `Icon Only` — `TODO: фронты`.
 
 **a11y:**
 - Клавиатура: в свободном гайде «переключение — по клику или клавиатуре». Стрелки, Home/End, Tab-стоп, активация по фокусу или по Enter — `TODO: фронты`.
