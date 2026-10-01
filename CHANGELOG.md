@@ -38,6 +38,31 @@
 
 ---
 
+## 2026-10-01 — Guide kit: каркас и блоки гайда
+
+### Changed
+- `ds/_scripts/guide-kit.json` — новые компоненты `Guide/Frame`, `Guide/Cover`, `Guide/Section`, `Guide/When`, `Guide/Dimension`; `Guide/DoDont` по образцу Zhandos; рецепт сборки.
+- `skills/design-systems/ds-guideline/SKILL.md` 0.7.0 → 0.7.1 — по `feedback.md`: kit по группам, сборка Frame → Cover → Section → блоки.
+
+## 2026-10-01 — ds-guideline 0.6.1–0.7.0 + тест на Badge
+
+### Added
+- `ds/guidelines/badge.md`, `figma-status/core-kit/badge.md` — гайд Badge (ветка `QbTS4UqcIFOYBGNAzKeD13`).
+- `ds/_scripts/guide-kit.json` — ID и приёмы Guide kit (блоки гайда компонентами).
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.6.0 → 0.7.0 — по `feedback.md`: дизайн «Когда использовать» и «Делаем / не делаем» по образцам Zhandos, «В интерфейсе» без подмен, без a11y на канвасе, сборка одним агентом из Guide kit.
+- `templates/component-guideline.md`, `docs/guideline-structure.md`, `docs/experiments.md` — то же; сравнение «один агент vs команда».
+
+## 2026-10-01 — ds-guideline 0.6.0: правки Zhandos и лида
+
+### Added
+- `ds/guidelines/modal-header-new.md`, `figma-status/core-kit/modal-header-new.md` — общий гайд нового Modal header (ветка `vfBuhFdEz5CETkwRBeIWI7`, `23856:4647`).
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.5.0 → 0.6.0 — по `feedback.md`: блок «Коротко» после обложки, бюджет текста ≤ 350 слов, маркеры анатомии на элементах, свойства подблоками по смыслу, раздел «Сабкомпоненты», «Делаем / не делаем» с полосой под примером и крупной меткой, «В интерфейсе» только из реальных макетов, спецификация разметкой, самопроверка глазами лида.
+- `templates/component-guideline.md`, `docs/guideline-structure.md` — 12 разделов по новой структуре.
+
 ## 2026-09-29 — ds-guideline 0.5.0 + гайдлайны Modal header и Tabs
 
 ### Added
