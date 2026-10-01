@@ -38,6 +38,12 @@
 
 ---
 
+## 2026-10-01 — Guide kit: каркас и блоки гайда
+
+### Changed
+- `ds/_scripts/guide-kit.json` — новые компоненты `Guide/Frame`, `Guide/Cover`, `Guide/Section`, `Guide/When`, `Guide/Dimension`; `Guide/DoDont` по образцу Zhandos; рецепт сборки.
+- `skills/design-systems/ds-guideline/SKILL.md` 0.7.0 → 0.7.1 — по `feedback.md`: kit по группам, сборка Frame → Cover → Section → блоки.
+
 ## 2026-10-01 — ds-guideline 0.6.1–0.7.0 + тест на Badge
 
 ### Added

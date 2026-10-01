@@ -9,6 +9,15 @@
   "coverPreviewSlotId": "24009:143545",
   "kitFrameId": "24009:143694",
   "kitPreviewPanelId": "24009:248332",
+  "kitGroups": {
+    "Каркас гайда": "24074:5310",
+    "Блоки раздела": "24074:5325",
+    "Текст": "24074:5348",
+    "Разметка": "24074:5359",
+    "Таблица": "24074:5374",
+    "framePreviewBg": "24076:5309"
+  },
+  "guideFrameValues": {"width": 1600, "padding": "96 = Spacing/spacing-24x", "gap": "160, нет токена", "fill": "bg/white/white-primary", "coverWrapperGap": "96 (Cover → раздел 01)"},
   "sections": {
     "01": {"name": "01 — Обложка: Скопировать себе", "frameId": "24009:143622", "asideId": "24009:143623", "titleTextId": "24009:143625", "descriptionTextId": "24009:143626", "contentId": "24009:143627"},
     "02": {"name": "02 — Коротко", "frameId": "24009:143628", "asideId": "24009:143629", "titleTextId": "24009:143631", "descriptionTextId": "24009:143632", "contentId": "24009:143633"},
@@ -24,6 +33,9 @@
     "12": {"name": "12 — Flutter", "frameId": "24009:143688", "asideId": "24009:143689", "titleTextId": "24009:143691", "descriptionTextId": "24009:143692", "contentId": "24009:143693"}
   },
   "kit": {
+    "Frame": "24069:5313",
+    "Cover": "24069:5353",
+    "Section": "24069:5307",
     "Canvas": "24009:143696",
     "Tile": "24009:143778",
     "Caption": "24009:143780",
@@ -31,33 +43,43 @@
     "Marker": {"setId": "24009:143788", "Number": "24009:143784", "Letter": "24009:143786"},
     "MetricCard": "24009:247894",
     "DoDont": {"setId": "24009:247915", "Do": "24009:247897", "Dont": "24009:247906"},
+    "When": {"setId": "24065:250327", "Use": "24065:250309", "Avoid": "24065:250318"},
     "TableRow": {"setId": "24009:248024", "Header": "24009:248000", "Body": "24009:248011", "HeaderNarrowFirst": "24009:249719", "BodyNarrowFirst": "24009:249730"},
-    "Overlay": {"setId": "24009:248029", "Padding": "24009:248027", "Gap": "24009:248028"}
+    "Overlay": {"setId": "24009:248029", "Padding": "24009:248027", "Gap": "24009:248028"},
+    "Dimension": {"setId": "24069:5327", "Horizontal": "24069:5315", "Vertical": "24069:5321"}
   },
   "props": {
+    "Frame": {"slot": "Sections#24069:5", "slotNodeName": "Sections", "values": "1600, padding 96 (Spacing/spacing-24x), slot gap 160 (нет токена), bg/white/white-primary"},
+    "Cover": {"title": "Title#24069:6", "slot": "Preview#24069:7", "slotNodeName": "Preview (nested in 'Container'; find via findAllWithCriteria SLOT)", "size": "1408×300; Preview 600×124, HORIZONTAL, gap 16, right-aligned"},
+    "Section": {"number": "Number#24069:0", "title": "Title#24069:1", "description": "Description#24069:2", "showDescription": "Show description#24069:3", "slot": "Content#24069:4", "slotNodeName": "Content", "size": "1408; Aside 320 (Number 13/18 Medium muted, Title 32/40 Bold, Description 16/24 secondary, width 320 + textAutoResize HEIGHT); Content 1024, VERTICAL, gap 32"},
     "Canvas": {"slot": "Content#24009:0", "slotNodeName": "Content"},
     "Tile": {"slot": "Content#24009:1", "slotNodeName": "Content"},
     "Caption": {"text": "Text#24009:2"},
     "Subheading": {"text": "Text#24009:3"},
     "Marker": {"label": "Label#24009:6", "variant": "Type = Number | Letter"},
     "MetricCard": {"number": "Number#24009:7", "label": "Label#24009:8"},
-    "DoDont": {"slot": "Example#24009:13", "slotNodeName": "Example", "rule": "Rule#24009:14", "variant": "Kind = Do | Dont"},
+    "DoDont": {"slot": "Example#24009:13", "slotNodeName": "Example", "rule": "Rule#24009:14", "variant": "Kind = Do | Dont", "anatomy": "VERTICAL gap 16: 'Label row' (circle 24 + 'Делаем'/'Не делаем' 18/24 Semi Bold, gap 8) → 'Example' slot = white tile (r16, height 180, HORIZONTAL, centered, gap 12, padding 0) → 'Rule' 16/24 Regular. Width 452."},
+    "When": {"slot": "Items#24065:4", "slotNodeName": "Items", "itemNodeName": "Item", "variant": "Kind = Use | Avoid", "anatomy": "VERTICAL gap 16: 'Label row' (circle 24 + 'Используем'/'Не используем' 18/24 Semi Bold, gap 8) → 'Items' slot = white tile (r16, padding 32, VERTICAL gap 12) with 3 default 'Item' texts (Inter Regular 16/24, text/neutral/primary, FILL). Width 452. No text props: Figma forbids property refs on slot sublayers — edit the Item texts in the slot."},
     "TableRow": {"cells": ["Cell 1#24009:26", "Cell 2#24009:27", "Cell 3#24009:28", "Cell 4#24009:29", "Cell 5#24009:30"], "marker": "Marker#24009:31", "variants": "Header = Yes | No; Narrow first = No | Yes", "cellNodeNames": ["Cell 1", "Cell 2", "Cell 3", "Cell 4", "Cell 5"], "textNodeNames": ["Text 1", "Text 2", "Text 3", "Text 4", "Text 5"], "markerNodeName": "Marker (inside Cell 1, Body variants only)"},
-    "Overlay": {"variant": "Kind = Padding | Gap"}
+    "Overlay": {"variant": "Kind = Padding | Gap", "fillOpacity": 0.3},
+    "Dimension": {"variant": "Direction = Horizontal | Vertical", "markerNodeName": "Marker", "markerLabel": "Label#24009:6", "anatomy": "1px line bg/neutral/tertiary + 9px end ticks + Guide/Marker Letter centered (exposed instance). Default 120×24 (H) / 24×120 (V)."}
   },
   "howTo": [
     "Page: await figma.setCurrentPageAsync(await figma.getNodeByIdAsync('8253:5009')). Write only inside your section's Content frame (sections.NN.contentId); the Content column is vertical auto-layout, gap 32, width 1024.",
-    "Instance: const inst = (await figma.getNodeByIdAsync(kit.X)).createInstance(); parent.appendChild(inst); THEN inst.layoutSizingHorizontal = 'FILL' (Canvas, Table row, Metric card / DoDont / Tile inside a horizontal row). For variants use the variant component id directly (e.g. kit.DoDont.Dont) or inst.setProperties({Kind:'Dont'}).",
-    "Text props: inst.setProperties({'Text#24009:2':'Size=lg'}) (Caption), {'Text#24009:3':'…'} (Subheading), {'Label#24009:6':'B'} (Marker), {'Number#24009:7':'3','Label#24009:8':'размера'} (Metric card), {'Rule#24009:14':'…'} (DoDont), {'Cell 1#24009:26':'…', …, 'Cell 5#24009:30':'…', 'Marker#24009:31':true} (Table row). No font loading needed for setProperties.",
-    "Slots (Canvas/Tile = 'Content', DoDont = 'Example'): const slot = inst.children.find(n => n.type==='SLOT' && n.name==='Content'); slot.appendChild(node). Use direct children, not findOne (finds nested slots). Slot itemSpacing/padding can be overridden; slot layoutMode can NOT (stays VERTICAL) — for a row, append a horizontal auto-layout frame (fills=[], clipsContent=false) into the slot and FILL it.",
+    "Instance: const inst = (await figma.getNodeByIdAsync(kit.X)).createInstance(); parent.appendChild(inst); THEN inst.layoutSizingHorizontal = 'FILL' (Canvas, Table row, Cover / Section inside Guide/Frame, Metric card / DoDont / When / Tile inside a horizontal row). For variants use the variant component id directly (e.g. kit.DoDont.Dont, kit.When.Avoid) or inst.setProperties({Kind:'Dont'}).",
+    "Text props: inst.setProperties({'Text#24009:2':'Size=lg'}) (Caption), {'Text#24009:3':'…'} (Subheading), {'Label#24009:6':'B'} (Marker), {'Number#24009:7':'3','Label#24009:8':'размера'} (Metric card), {'Rule#24009:14':'…'} (DoDont), {'Title#24069:6':'Badge'} (Cover), {'Number#24069:0':'02','Title#24069:1':'Коротко','Description#24069:2':'…','Show description#24069:3':true} (Section), {'Cell 1#24009:26':'…', …, 'Cell 5#24009:30':'…', 'Marker#24009:31':true} (Table row). No font loading needed for setProperties.",
+    "Slots: Canvas/Tile/Section = 'Content', DoDont = 'Example', When = 'Items', Frame = 'Sections', Cover = 'Preview'. const slot = inst.children.find(n => n.type==='SLOT' && n.name==='Content'); slot.appendChild(node). Use direct children, not findOne (finds nested slots); Cover's Preview is nested in 'Container' → inst.findAllWithCriteria({types:['SLOT']}).find(n=>n.name==='Preview'). Slot itemSpacing/padding can be overridden; slot layoutMode can NOT (fixed by the main component: Canvas/Tile/Section/Frame/When = VERTICAL, DoDont Example and Cover Preview = HORIZONTAL) — for the other direction append an auto-layout frame (fills=[], clipsContent=false) into the slot. Text property refs cannot point at slot sublayers (Figma limit).",
     "Guide/Canvas = grey panel (bg/neutral/primary, r24, p48); Guide/Tile = white example tile (r16, p32, centered); Guide/Caption goes ABOVE the example (put Caption + example in a vertical auto-layout cell, gap 12).",
     "Коротко: Canvas → horizontal row frame in slot → 4× Metric card, each layoutSizingHorizontal='FILL'.",
-    "Делаем / не делаем: Canvas (or plain row) → horizontal row gap 32 → DoDont Do + DoDont Dont, each FILL; put the example into the 'Example' slot; Rule ≤ 8 words.",
+    "Когда использовать (образец 24009:143601): Canvas → horizontal row in slot (fills=[], itemSpacing 24 = Spacing/spacing-6x-xll, counterAxisAlignItems='MIN') → When Use + When Avoid, each FILL. Items: await figma.loadFontAsync({family:'Inter',style:'Regular'}); const s = inst.children.find(n=>n.type==='SLOT'&&n.name==='Items'); const tpl = s.children[0]; while (s.children.length < items.length) s.appendChild(tpl.clone()); while (s.children.length > items.length) s.children[s.children.length-1].remove(); s.children.forEach((t,i)=> t.characters = items[i]); — item ≤ 7 words; in Avoid write 'случай → компонент'. Clones keep style and token binding.",
+    "Делаем / не делаем (образец 24009:248079): Canvas (override its slot itemSpacing to 48 = Spacing/spacing-12x — gap between pairs) → per pair a horizontal row (fills=[], gap 24 = Spacing/spacing-6x-xll) → DoDont Do + DoDont Dont, each FILL; put the example into the 'Example' slot (white tile, height 180, HORIZONTAL, centered; for a column of examples append a vertical auto-layout 'Stack' frame, gap 12); Rule ≤ 8 words, shown under the tile. The pair must show a visible difference. No bars or strokes.",
     "Table: vertical auto-layout frame (gap 0, fills=[]) → 1× Table row Header=Yes + N× Header=No, each FILL. Hide unused columns: inst.children.find(n=>n.name==='Cell 5').visible=false (do it for header and body rows alike). Narrow first=Yes gives a fixed 48 first column for № / marker (Анатомия, Спецификация). In body rows with 'Marker#24009:31'=true, set marker text via the nested instance: cell1.children.find(n=>n.name==='Marker').setProperties({'Label#24009:6':'A'}) and hide 'Text 1' (visible=false). Cell widths cannot be overridden on instances — other column grid → detachInstance().",
     "Marker: Type=Number (anatomy 1,2,3) / Type=Letter (spec A,B,C). Place ON the element: inside a non-auto-layout stage frame, or inst.layoutPositioning='ABSOLUTE' inside auto-layout, then set x/y so the marker center sits on the element edge/corner.",
-    "Overlay: Kind=Padding (bg/critical/secondary-light) / Kind=Gap (bg/brand/secondary-light). Put over the example: inst.layoutPositioning='ABSOLUTE' (if parent is auto-layout), inst.resize(w,h), x/y = measured area.",
-    "Section aside: description text is hidden and empty — to use: load Inter Regular, set characters, visible=true. Skipped section → (await figma.getNodeByIdAsync(sections.NN.frameId)).remove(). Section 01 lives inside the cover wrapper (coverWrapperId) right under the Cover.",
-    "Cover preview: coverPreviewSlotId is a plain auto-layout frame (HORIZONTAL, gap 16, right-aligned, fixed 600×124) inside the glass 'Container'; append Badge instances at 1× (no scaling); can switch it to HUG if needed.",
-    "Kit components live in frame 'Guide kit' (kitFrameId); Tile, Metric card and DoDont sit on a grey preview panel inside it. Do not move or edit kit components; instance them."
+    "Dimension (spec redlines): kit.Dimension.Horizontal / .Vertical → inst.layoutPositioning='ABSOLUTE' (if parent is auto-layout), inst.resize(measuredWidth, 24) for Horizontal or inst.resize(24, measuredHeight) for Vertical; x/y so the line runs along the measured edge (line is centered in the 24px band). Letter: inst.children.find(n=>n.name==='Marker').setProperties({'Label#24009:6':'B'}). Color bg/neutral/tertiary, marker stays centered on resize.",
+    "Overlay: Kind=Padding (bg/critical/secondary-light) / Kind=Gap (bg/brand/secondary-light), fill paint opacity 30% (token kept). Put over the example: inst.layoutPositioning='ABSOLUTE' (if parent is auto-layout), inst.resize(w,h), x/y = measured area. Do not reassign fills; if you ever rebind the token, set paint opacity back to 0.3 after setBoundVariableForPaint (binding resets it to the token alpha 8%).",
+    "Сборка гайда (новый гайд, только из kit): 1) const frame = (await figma.getNodeByIdAsync(kit.Frame)).createInstance(); place it on free canvas (x/y). 2) const secs = frame.children.find(n=>n.type==='SLOT'&&n.name==='Sections'). 3) Cover: const c = (await figma.getNodeByIdAsync(kit.Cover)).createInstance(); secs.appendChild(c); c.layoutSizingHorizontal='FILL'; c.setProperties({'Title#24069:6':'<Component>'}); Preview slot ← component instances at 1× (no scaling). 4) One Guide/Section per chapter: const s = (await figma.getNodeByIdAsync(kit.Section)).createInstance(); secs.appendChild(s); s.layoutSizingHorizontal='FILL'; s.setProperties({'Number#24069:0':'02','Title#24069:1':'Коротко'}); optional description: {'Description#24069:2':'…','Show description#24069:3':true}. 5) Blocks: const content = s.children.find(n=>n.type==='SLOT'&&n.name==='Content'); content.appendChild(Canvas / When / DoDont rows / Table / Caption+Tile …). Gap 160 between sections comes from the Sections slot; for the 96 gap Cover → section 01 wrap both in a vertical auto-layout frame (fills=[], gap 96 = Spacing/spacing-24x) inside Sections and FILL it. Nodes inside the Frame instance get instance-sublayer ids ('I…;…') — keep the handles returned by appendChild or re-find by traversal from the frame. Fallback without Guide/Frame: plain vertical auto-layout frame 1600, padding 96 (Spacing/spacing-24x), gap 160 (нет токена), fill bg/white/white-primary.",
+    "Section aside (existing parallel guide frames, not Guide/Section): description text is hidden and empty — to use: load Inter Regular, set characters, visible=true. Skipped section → (await figma.getNodeByIdAsync(sections.NN.frameId)).remove(). Section 01 lives inside the cover wrapper (coverWrapperId) right under the Cover.",
+    "Cover preview (existing parallel guide): coverPreviewSlotId is a plain auto-layout frame (HORIZONTAL, gap 16, right-aligned, fixed 600×124) inside the glass 'Container'; append Badge instances at 1× (no scaling); can switch it to HUG if needed. New guides use Guide/Cover (Preview slot, same geometry).",
+    "Kit components live in frame 'Guide kit' (kitFrameId), each inside an 'Item · <name>' wrapper (name + key props caption) grouped in 'Group · …' frames (kitGroups); Tile, Metric card, DoDont and When sit on the grey preview panel (kitPreviewPanelId), Guide/Frame on its own grey backdrop. Do not move or edit kit components; instance them."
   ]
 }
