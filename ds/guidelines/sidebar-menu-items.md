@@ -1,198 +1,172 @@
-Источник: Core kit, ветка `ahiQGs5RWn9cX6wCqlZUgz`, группа «Пункты меню» `23998:12268`: `Sidebar/Item` `21818:1370`, `Sidebar/Item AI` `22699:10143`, `Sidebar/Back` `23986:12266`, `Sidebar/Item Sign out` `23065:10000`, `Sidebar/CompanySwitcher` `23069:10471`; 2026-10-01. Скилл ds-guideline 0.5.0. Свёрстан в той же ветке: фрейм `24072:12993` в секции «Документация v2» `24060:11244`, ждёт ревью.
+Источник: Core kit `21818:1370` (ветка `ahiQGs5RWn9cX6wCqlZUgz`), 2026-10-01. Скилл ds-guideline 0.7.1. Вёрстка: фрейм «Пункты меню — guideline v2» `24121:15653` в секции «Документация v2» `24060:11244`.
 
 # Sidebar — пункты меню
 
 Гайд 2 из 3. Контейнер — `ds/guidelines/sidebar.md`, вложенность и компакт — `ds/guidelines/sidebar-nesting-compact.md`.
 
-## 1. Пункты меню — обложка
-Строка сайдбара — ссылка на раздел. `Sidebar/Item` — основной пункт, `Sidebar/Item AI` — только ИИ-ассистент. `Sidebar/Back`, `Sidebar/Item Sign out`, `Sidebar/CompanySwitcher` — только мобильное меню.
+## 1. Обложка
+Строка сайдбара — ссылка на раздел.
 
 **Скопировать себе:**
-- `Sidebar/Item, ✔ Selection=None, 📌 Mode=Full` — обычный пункт.
-- `Sidebar/Item, ✔ Selection=Self` — пункт открытой страницы.
-- `Sidebar/Item, 👁️ Counter=true` — раздел, где ждут действия: «Вакансии 39» на «Главной».
+- `Sidebar/Item, ✔ Selection=None, 📌 Mode=Full` — обычный пункт («Дашборд»).
+- `Sidebar/Item, ✔ Selection=Self` — пункт открытой страницы («Главная»).
+- `Sidebar/Item, 👁️ Counter=true` — раздел, где ждут действия («Вакансии 39»).
+
+Примеры — клоны пунктов из `Sidebar, Mode=Full`, с их иконками и лейблами.
 
 | Ссылка | Где |
 |---|---|
-| Компонент в Core kit | `Sidebar/Item` `21818:1370` — 36 вариантов; `Sidebar/Item AI` `22699:10143` — 25; `Sidebar/Back` `23986:12266` — 3; `Sidebar/Item Sign out` `23065:10000` — 3; `Sidebar/CompanySwitcher` `23069:10471` — 4. Страница ✅ Sidebar, группа «Пункты меню» |
-| Иконки | группа «Иконки» `23998:251081`: 85 иконок `Sidebar/Gray`, `Sidebar/Blue`, `Sidebar/Pale`, `Sidebar/Red` |
+| Компонент | `Sidebar/Item` `21818:1370`, страница ✅ Sidebar, группа «Пункты меню» `23998:12268`; иконки — группа «Иконки» `23998:251081` |
 | Storybook | `TODO: фронты` |
 | Flutter | `TODO: мобильщики` |
-| Статус и версия | ✅ в Core kit. Реестр (main, 2026-09-25): `Item` 94%, `Item AI` 90% на 🧩 Tokens; `Back`, `Item Sign out`, `CompanySwitcher` в реестре ещё нет. Версия — `TODO: проверить` |
 
-## 2. Когда использовать
-Почему Item AI — отдельный компонент: ось акцента на `Item` удвоила бы матрицу ради одного пункта во всём продукте (старый гайд).
+## 2. Коротко
+| 36 | 3 | 3 | 4 |
+|---|---|---|---|
+| вариантов | режима | Selection | сабкомпонента |
 
+36 = Full 13 + Compact 13 + Mobile 10 (не все сочетания State × Selection существуют, см. 6). Сабкомпоненты: `Sidebar/Item AI`, `Sidebar/Back`, `Sidebar/Item Sign out`, `Sidebar/CompanySwitcher`. Опций контента 9: `👁️ Badge`, `👁️ Counter`, `👁️ Chevron`, `👁️ Arrow`, `🖲️ Icon Regular / Filled / Pale`, `🖲️ Chevron`, `🖲️ Arrow`.
+
+## 3. Когда использовать
 | Используем | Не используем → что вместо |
 |---|---|
-| • `Item` — раздел без детей и родитель внутри `Sidebar/Section` | • Раздел с детьми на десктопе → `Sidebar/Section` (гайд «Вложенность и компакт») |
-| • `Item AI` — только ИИ-ассистент (описание компонента) | • Новый акцентный пункт → нельзя без решения владельца компонента (старый гайд) |
-| • `Back`, `Item Sign out`, `CompanySwitcher` — только `Sidebar, Mode=Mobile` | • Ребёнок второго уровня → `Sidebar/SubItem` в `Sidebar/SubItem Rail` |
-| • `Item` с `👁️ Arrow` — пункт с детьми в мобильном меню | • Действие на странице → `button` |
+| `Item` — раздел без детей | Раздел с детьми на десктопе → `Sidebar/Section` |
+| `Item AI` — только ИИ-ассистент | Второй уровень → `Sidebar/SubItem` |
+| `Back`, `Sign out`, `CompanySwitcher` — только в `Mode=Mobile` | Действие на странице → `button` |
+| `Arrow=true` — пункт с детьми в мобильном меню | Новый акцентный пункт → только с владельцем компонента |
 
-## 3. Анатомия
-Пример: `Sidebar/Item, Mode=Full` с бейджем и шевроном («Обучение»), со счётчиком («Вакансии») и `Mode=Compact` с точкой.
+Источник — старый гайд `22381:36525` и описания компонентов.
+
+## 4. Анатомия
+Пример: родитель секции «Обучение» (`Badge`, `Chevron`), «Вакансии» (`Counter`) и пункт `Mode=Compact` с точкой.
 
 | № | Элемент | Что это (слой / компонент) | Обязательный | Стиль и токены |
 |---|---|---|---|---|
-| 1 | Контейнер | фрейм ряда, фон и обводка по состоянию | да | 228 × 36, паддинг 8 `Spacing/spacing-2x-sm`, радиус 12 `Radius/radius-md` |
-| 2 | Иконка | `Sidebar/<Gray, Blue, Pale>/<имя>` 20 — `🖲️ Icon Regular / Filled / Pale` | да | `icon/*` по `Selection` |
-| 3 | Лейбл | текстовый слой `Label` (`𝐓 Label`), одна строка | да, кроме Compact | `Body/sm-medium` (14/20) |
-| 4 | Статус-бейдж | `Badge, ↕ Size=sm` (`👁️ Badge`) | нет | Green «Новое», Purple «Бета», Gray «Скоро» |
-| 5 | Счётчик | `Counter-badge, Size=lg` 20 (`👁️ Counter`) | нет | `Color=Pale blue`: светлый при None и Child, сплошной при Self |
-| 6 | Шеврон | `angle-down` / `angle-up` 20 (`👁️ Chevron`) | только в `Sidebar/Section` | `icon/*` как у иконки |
-| 7 | Точка | `Dot-badge` 8 в правом верхнем углу — вместо бейджа и счётчика | только Compact | бейдж — цветом бейджа, счётчик — `bg/pale/primary`; обводка 1,5 `border-md` `border/neutral/white` |
+| 1 | Контейнер | фрейм ряда, фон и обводка по Selection и State | да | `Radius/radius-md` (12), `Spacing/spacing-2x-sm` (8) |
+| 2 | Иконка | `🖲️ Icon Regular / Filled / Pale`, 20 | да | `icon/*` по Selection |
+| 3 | Лейбл | `Label`, одна строка | да, кроме Compact | `Body/sm-medium` |
+| 4 | Статус-бейдж | `Badge, Size=sm` | нет | Green «Новое», Purple «Бета», Gray «Скоро» |
+| 5 | Счётчик | `Counter-badge, Size=lg` | нет | `Color=Pale blue` |
+| 6 | Шеврон | `angle-down` / `angle-up`, 20 | только в `Sidebar/Section` | `icon/*` как у иконки |
+| 7 | Точка | `Dot-badge` 8 вместо бейджа и счётчика | только Compact | `border-md`, `border/neutral/white` |
 
-В Mobile шеврон — `angle-right` (`👁️ Arrow`): пункт с детьми ведёт на второй экран.
+## 5. Свойства
+Иконку меняем во всех трёх свойствах: Regular (None), Filled (Self), Pale (Child) — цвет задаёт вариант (описание компонента).
 
-**Item AI** — тот же ряд. Отличие — у `Selection=Self` подложка-градиент #00C2FF → #008EFF → #6A5BFF (8%) и градиентная иконка `Sidebar/Blue/magicoon`. Paint-стиля и токенов нет: градиент задан заливкой в каждом варианте.
-
-## 4. Свойства
-
-### Sidebar/Item
-
-#### 📌 Mode
 Почему в Compact лейбл остаётся в компоненте: из него собирается tooltip (старый гайд).
-Линейка: `Full` 228 × 36 · `Compact` 36 × 36 · `Mobile` 343 × 44.
-Значения: `Full` (по умолчанию), `Compact`, `Mobile`.
 
-#### ✔ Selection
-Положение пользователя относительно строки, а не состояние наведения. `None` — маршрут не здесь, `Self` — маршрут на этой строке, `Child` — маршрут внутри неё, родитель бледный. Накладывается поверх State.
-Ряд примеров: `None` · `Self` · `Child`.
-Значения: `None` (по умолчанию), `Self`, `Child`.
+Базовый пример в подблоках — родитель секции «Обучение» с выключенными бейджем и шевроном.
 
-#### 🖲️ Icon Regular · 🖲️ Icon Filled · 🖲️ Icon Pale
-Иконка на каждое значение Selection: Regular — None (`Sidebar/Gray/*`), Filled — Self (`Sidebar/Blue/*`), Pale — Child (`Sidebar/Pale/*`). Цвет задаёт вариант, поэтому при замене иконки — выставить все три (описание компонента). По умолчанию `home`.
+### Режим: 📌 Mode
+`Mode=Full` 228 · `Mode=Compact` 36 · `Mode=Mobile` 343. Значения: `Full` (по умолчанию), `Compact`, `Mobile`.
 
-#### 👁️ Badge · 👁️ Counter
-Статус-бейдж и счётчик после лейбла. Значения: false (по умолчанию) / true. В Compact оба превращаются в точку.
+### Выбор: ✔ Selection
+`Selection=None` · `Self` · `Child`. `Self` — маршрут на этой строке, `Child` — маршрут внутри неё.
 
-#### 👁️ Chevron · 🖲️ Chevron
-Шеврон раскрытия. Включается только у родителя внутри `Sidebar/Section`: `angle-down` — свёрнута, `angle-up` — раскрыта. Не действует при `Mode=Compact` и `Mode=Mobile`.
+### Трейлинг: 👁️ Badge · 👁️ Counter
+`Badge=false` · `Badge=true` · `Counter=true`. В Compact оба превращаются в точку (см. 7).
 
-#### 👁️ Arrow · 🖲️ Arrow
-`angle-right` — пункт с детьми в мобильном меню, ведёт на второй экран. Есть только у `Mode=Mobile`.
+### Шеврон: 👁️ Chevron · 🖲️ Chevron
+`Chevron=false` · `Chevron=true`. Только у родителя в `Sidebar/Section`; не действует при `Mode=Compact` и `Mode=Mobile`.
 
-#### ⚙️ State
-`Default` (по умолчанию), `Hover`, `Pressed`, `Focus`, `Disabled` — см. 5.
+### Стрелка: 👁️ Arrow · 🖲️ Arrow
+`Mode=Mobile`: `Arrow=false` · `Arrow=true` — пункт с детьми ведёт на второй экран. Есть только у `Mode=Mobile`.
 
-Всего 36 вариантов: Full — 13, Compact — 13, Mobile — 10.
+## 6. Состояния
+Матрица `Mode=Full`: `State` Default · Hover · Pressed · Focus · Disabled × `Selection` None · Self · Child.
+- `Disabled` — только у `None`. В Mobile нет Hover.
+- Вес шрифта не меняется. У `None` на Hover и Pressed иконка не меняется; у Self и Child — вместе с текстом.
+- Focus — `States/focus-state`; у Self и Child фон на Focus плотнее (12%).
 
-### Sidebar/Item AI
-Как `Item`, но: `✔ Selection` — `None` и `Self` (Child нет, детей нет); иконки — `Icon Regular` и `Icon Filled` (по умолчанию `magicoon`); `𝐓 Label` по умолчанию «ИИ-ассистент»; бейдж — Purple «Бета». Шеврона в Mobile нет. `👁️ Chevron` и `👁️ Counter` в компоненте есть, но не включаются (старый гайд). Всего 25 вариантов: Full — 9, Compact — 9, Mobile — 7.
+## 7. Поведение и контент
+| Так | Не так / сейчас так |
+|---|---|
+| Длинный лейбл — одна строка, многоточие (`textTruncation=ENDING`, проверено инстансом «Управление командировками») | — |
+| С `Badge` и `Chevron` лейблу остаётся около 100 из 184 | — |
+| Compact: лейбл — в tooltip, бейдж и счётчик — точка 8 | — |
 
-### Sidebar/Back
-`𝐓 Title` — название открытого раздела, по умолчанию «Обучение». `⚙️ State`: `Default`, `Pressed`, `Focus`. Действие, а не маршрут: оси Selection нет.
+- **Лейбл:** до 17 символов на русском, с запасом +30% на казахский (старый гайд).
+- **Бейджи:** счётчик — пока есть задачи; «Новое» — 2 спринта; «Бета» — до релиза; «Скоро» — вместе с `State=Disabled` (старый гайд).
+- **Точки в Compact:** одна; приоритет у счётчика (описание компонента).
+- **Item AI:** перелив градиента — только во фронте, в Figma статичный кадр; параметры анимации — `TODO: фронты`.
 
-### Sidebar/Item Sign out
-`𝐓 Label` — «Выйти»; `🖲️ Icon Red` — `Sidebar/Red/log-out`; `⚙️ State`: `Default`, `Pressed`, `Focus`. Оси Selection нет.
-
-### Sidebar/CompanySwitcher
-`📌 Quantity`: `Single` (по умолчанию) — ряд не кликается, без шеврона; `Multiple` — открывает шит выбора компании. `⚙️ State`: `Default`, `Pressed`, `Focus` — Pressed и Focus только у `Multiple`. `𝐓 Label` — название компании; `🖲️ Switcher` — иконка справа, `angle-down`, только `Multiple`. Описания у компонента нет — `TODO: проверить`.
-
-### Мёртвые сочетания
-`Disabled` + `Self` или `Child` — не существует: недоступный раздел не открыт и не содержит открытую страницу. `Hover` в Mobile — нет. `👁️ Chevron` при Compact и Mobile; `👁️ Arrow` при Full и Compact; `𝐓 Label` при Compact (только для tooltip).
-
-## 5. Состояния
-Почему Selection отдельно от State: у выбранного пункта свои Hover, Pressed и Focus.
-
-Ряды примеров (`Item, Mode=Full`):
-- `Selection=None`: `Default` · `Hover` · `Pressed` · `Focus` · `Disabled`
-- `Selection=Self`: `Default` · `Hover` · `Pressed` · `Focus`
-- `Selection=Child`: `Default` · `Hover` · `Pressed` · `Focus`
-
-Цвета по состояниям — таблица в 9.
-
-- Вес шрифта не меняется: Medium во всех состояниях и Selection.
-- У `None` на Hover и Pressed темнеет текст, иконка остаётся `icon/neutral/quaternary`. У Self и Child иконка меняется вместе с текстом.
-- Focus — кольцо `States/focus-state` (0, 0, 0, 3, `effects/focus-default`); у Self и Child фон на Focus плотнее: 12% вместо 8%.
-- В Mobile нет Hover: наведения на тач-экране нет.
-- `Item AI, Self`: градиент 8% в Default, 20% в Hover, 30% в Pressed. В Focus градиента нет — `bg/brand/secondary`. Расхождения состояний Item AI приняты («Решено не трогать» в `figma-status/core-kit/sidebar.md`).
-- `Back`: Pressed — фон `bg/neutral/secondary-pressed`, текст и иконка `*/brand/primary-pressed`; Focus — обводка 2 внутри `effects/focus-default` (`border-lg`): ряд во всю ширину экрана, внешнее кольцо обрезалось бы краями (описание компонента).
-- `Item Sign out`: Pressed — фон `bg/neutral/secondary-pressed`, текст и иконка `*/critical/primary-pressed`; Focus — `States/focus-state`.
-- `CompanySwitcher, Multiple`: Pressed — фон `bg/neutral/secondary-pressed`, обводка `border/neutral/pressed`; Focus — `States/focus-state`.
-
-## 6. Поведение и контент
-Пара примеров: длинный лейбл с многоточием · лейбл с бейджем, счётчиком и шевроном. Почему один трейлинг: с бейджем, счётчиком и шевроном лейбл ужимается со 184 до 90 — это 9 символов (старый гайд).
-
-- **Лейбл:** одна строка, многоточие. До 17 символов на русском, с запасом +30% на казахский (старый гайд, «Как добавить пункт»).
-- **Трейлинг:** один элемент на пункт. Counter и Badge одновременно не включать.
-- **Бейджи** (старый гайд):
-  - счётчик — числовая нагрузка, требующая действия; живёт, пока есть задачи;
-  - «Новое» (Green) — раздел появился недавно, 2 спринта;
-  - «Бета» (Purple) — раздел экспериментальный, до релиза;
-  - «Скоро» (Gray) — раздел недоступен, вместе с `State=Disabled`, до релиза.
-- **Compact:** лейбл скрыт — tooltip из лейбла; бейдж и счётчик — точка 8 в углу. Показывается одна точка, приоритет у счётчика: он про задачу пользователя, статус — про зрелость раздела (описание компонента). Точки лежат в одном месте — одновременно не включать.
-- **Mobile:** ряды 44, без Hover. Пункт с детьми — `👁️ Arrow`, на месте не раскрывается.
-- **Item AI:** перелив градиента живёт только во фронте, в Figma — статичный кадр. Параметры анимации — уточнить у фронта (Нурсултан, старый гайд). По `prefers-reduced-motion: reduce` анимация отключается полностью.
-- **Back:** тап по всей строке; длинное название — многоточие в одну строку.
-- **CompanySwitcher:** первый ряд мобильного меню. `Multiple` открывает шит: аватар и название у каждой компании, текущая отмечена, поиск — от 8 компаний; закрывается свайпом вниз и тапом по затемнению, выбор закрывает шит сразу. Шит — не компонент сайдбара: `Modal header` (Mobile, Sheet header) + `Selection List` (View=Sheet, Leading=Avatar) (старый гайд).
-
-## 7. Делаем / не делаем
+## 8. Делаем / не делаем
 | Делаем | Не делаем |
 |---|---|
-| Иконка у каждого пункта верхнего уровня | Не оставляем пункт без иконки: в Compact она — единственный носитель смысла |
-| Один трейлинг-элемент на пункт | Не включаем бейдж и счётчик вместе |
-| Счётчик — где ждут действия | Не ставим счётчик ради внимания |
-| «Новое» — до двух спринтов | Не держим статус-бейдж дольше |
-| Уникальные лейбл и иконка | Не делаем два пункта с одним лейблом или иконкой |
+| Пункт с иконкой → «Иконка у каждого пункта» | Иконка скрыта → «Не оставляем пункт без иконки» |
+| `Counter=true` → «Один трейлинг на пункт» | `Counter=true` + `Badge=true` → «Не включаем бейдж и счётчик вместе» |
+| «Дашборд», «Сотрудники» → «Уникальные лейбл и иконка» | «Сотрудники» дважды → «Не повторяем лейбл и иконку» |
 
-Источник — старый гайд «Делаем / не делаем» и «Бейджи».
+Источник — старый гайд («Делаем / не делаем», «Бейджи»).
 
-## 8. В интерфейсе
-Пример — сайдбар «Главной» 1440 (`22251:33379`): «Главная» — `Selection=Self`; «Обучение» — родитель секции с бейджем «Новое»; «Табель» — бейдж «Скоро»; «Вакансии 39» и «Заявки на подбор 9» — счётчики; «ИИ-ассистент» — `Item AI` с бейджем «Бета».
+## 9. В интерфейсе
+«Главная» 1440 · Full (`22251:33378`) — две обрезки 260 × 520 одного клона: верх и низ сайдбара, без изменений. Один трейлинг на пункт; бейджи — у новых («Обучение»), бета («ИИ-ассистент») и недоступных («Табель») разделов; счётчики — «Вакансии», «Заявки на подбор».
 
-Почему так: у каждого пункта один трейлинг, бейджи — только у новых и недоступных разделов.
+## 10. Спецификация (web)
+Разметка: пункт `Mode=Full`, 1×.
 
-## 9. Спецификация (web)
-Три таблицы: Item по режимам, цвета по состояниям, мобильные пункты. Почему обводка 0,5: у Self и Child она `border-xs`, во фронт передаётся как 0,5px, не округлять до 1 (описание компонента).
+| Маркер | Что | Full | Compact | Mobile |
+|---|---|---|---|---|
+| A | Ширина | 228 | 36 | 343 |
+| B | Высота | 36 | 36 | 44 |
+| C | Паддинг | `Spacing/spacing-2x-sm` (8) | = | `Spacing/spacing-3x-md` (12) |
+| D | Зазор | `Spacing/spacing-2x-sm` (8) | нет | = |
+| E | Иконка | 20 | = | = |
+| F | Радиус | `Radius/radius-md` (12) | = | = |
+| G | Лейбл | `Body/sm-medium` | скрыт | `Body/sm-medium` |
 
-### Sidebar/Item — по режимам
-| Свойство | `Full` | `Compact` | `Mobile` |
+**Цвета по состояниям:**
+
+| State | Selection=None | Selection=Self | Selection=Child |
 |---|---|---|---|
-| размер | 228 × 36 | 36 × 36 | 343 × 44 |
-| паддинг | 8 `Spacing/spacing-2x-sm` | 8 | 12 `Spacing/spacing-3x-md` |
-| зазор | 8 `Spacing/spacing-2x-sm` | — | 8 |
-| радиус | 12 `Radius/radius-md` | = | = |
-| иконка | 20 | 20 | 20 |
-| лейбл | `Body/sm-medium` 14/20, x 36, ширина 184 | скрыт | `Body/sm-medium`, x 40 |
-| бейдж | `Badge, Size=sm`, высота 20 | `Dot-badge` 8, x 28, y 0 | = Full |
-| счётчик | `Counter-badge, Size=lg` 20 | `Dot-badge` 8, `bg/pale/primary` | = Full |
-| шеврон | `angle-down` / `angle-up` 20 | — | `angle-right` 20 |
-| обводка Self, Child | 0,5 `border-xs` | = | = |
+| Default | `bg/white/white-primary`, `text/neutral/tertiary` | `bg/brand/secondary-light`, `text/brand/primary` | `bg/pale/secondary-light`, `text/pale/primary` |
+| Hover | `bg/neutral/secondary-hover` | `bg/brand/secondary-hover` | `bg/pale/secondary-hover` |
+| Pressed | `bg/neutral/secondary-pressed` | `bg/brand/secondary-pressed` | `bg/pale/secondary-pressed` |
+| Focus | `States/focus-state` | `bg/brand/secondary`, `States/focus-state` | `bg/pale/secondary`, `States/focus-state` |
+| Disabled | `text/neutral/disabled`, `icon/neutral/disabled` | нет | нет |
 
-### Sidebar/Item — цвета по состояниям
-| Состояние | `Selection=None` | `Selection=Self` | `Selection=Child` |
-|---|---|---|---|
-| Default | фон `bg/white/white-primary`; текст `text/neutral/tertiary` (#3D3D3D); иконка `icon/neutral/quaternary` (#ADADAD) | фон `bg/brand/secondary-light` (8%), обводка `border/brand/secondary`; текст и иконка `*/brand/primary` (#008EFF) | фон `bg/pale/secondary-light` (8%), обводка `border/pale/secondary`; текст `text/pale/primary` (#4D6FAD), иконка `icon/pale/primary` |
-| Hover | фон `bg/neutral/secondary-hover`; текст `text/neutral/tertiary-hover`; иконка не меняется | фон `bg/brand/secondary-hover` (20%); `*/brand/primary-hover` | фон `bg/pale/secondary-hover` (20%); `*/pale/primary-hover` |
-| Pressed | фон `bg/neutral/secondary-pressed`; текст `text/neutral/tertiary-pressed` | фон `bg/brand/secondary-pressed` (30%); `*/brand/primary-pressed` | фон `bg/pale/secondary-pressed` (30%); `*/pale/primary-pressed` |
-| Focus | как Default + `States/focus-state` | фон `bg/brand/secondary` (12%) + `States/focus-state` | фон `bg/pale/secondary` (12%) + `States/focus-state` |
-| Disabled | текст `text/neutral/disabled`, иконка `icon/neutral/disabled` | нет | нет |
-| `Counter-badge` | `Pale blue, Inverted=Yes` | `Pale blue, Inverted=No` | `Pale blue, Inverted=Yes` |
+Обводка Self и Child — `border-xs` (0,5), во фронт — 0,5px (описание компонента).
 
-Item AI — те же токены, кроме фона Self: градиент #00C2FF 0% → #008EFF 45% → #6A5BFF 100%, непрозрачность 8 / 20 / 30%; иконка Self — градиент #5AC8FF → #008EFF → #D9B5FF. Нет токена.
-
-### Мобильные пункты
-| Свойство | `Sidebar/Back` | `Sidebar/Item Sign out` | `Sidebar/CompanySwitcher` |
-|---|---|---|---|
-| размер | 375 × 48 (`frame/layout-frame-mobile-sm`) | 343 × 44 | 343 × 44 |
-| паддинг | 12 сверху и снизу, 16 по бокам | 12 `Spacing/spacing-3x-md` | 12, слева 8 |
-| зазор | 8 `Spacing/spacing-2x-sm` | 8 | 8 |
-| радиус, обводка | 0 | 12 `Radius/radius-md` | 12; обводка 1 `border-sm` `border/neutral/secondary` |
-| текст | `Body/md-medium` 16/22, `text/brand/primary` | `Body/sm-medium`, `text/critical/primary` (#EE2B2B) | `Body/sm-medium`, `text/neutral/primary` |
-| иконки | `angle-left` 20, `icon/brand/primary` | `Sidebar/Red/log-out` 20, `icon/critical/primary` | `Avatar` (Entity, XS) 28; `Multiple` — `angle-down` 20, `icon/neutral/quaternary` |
-| Pressed | `bg/neutral/secondary-pressed`; `*/brand/primary-pressed` | `bg/neutral/secondary-pressed`; `*/critical/primary-pressed` | `bg/neutral/secondary-pressed`; обводка `border/neutral/pressed` |
-| Focus | обводка 2 внутри `effects/focus-default` | `States/focus-state` | `States/focus-state` |
-
-**Токены** (дамп слоёв в ветке, 2026-10-01; не полный прогон `component-token-audit.js`): у слоёв пунктов старых переменных нет. Старые переменные — внутри `Counter-badge` и `Dot-badge` (Primitives, старые Numbers; перевод — отдельная таска №1 в `figma-status/core-kit/sidebar.md`). Без токена: градиенты `Item AI`.
+**Токены:** у слоёв пунктов старых переменных нет; старые — внутри `Counter-badge` и `Dot-badge`. Без токена: градиенты `Item AI`.
 
 **Mantine:** компонент и пропсы ↔ `Mode`, `Selection`, `State` — `TODO: фронты`.
 
-**a11y:**
-- Контраст текста Self — 3,0:1 (Focus — 2,9:1), ниже 4,5:1. Отклонение принято командой осознанно, к вопросу не возвращаться без пересмотра палитры (старый гайд). Child — 4,6:1, проходит.
-- Иконка `None` #ADADAD — 2,2:1 к белому. В Compact иконка — единственный носитель смысла, нужно 3:1 (WCAG 1.4.11). `TODO: проверить`.
-- `Item Sign out` #EE2B2B — 4,2:1, `Back` #008EFF — 3,3:1 к белому: ниже 4,5:1 для текста 14–16. `TODO: проверить`.
-- Активный пункт — `aria-current="page"`; в Compact подпись из лейбла — tooltip и `aria-label`. `TODO: фронты`.
-- Хит-зона: Full 36, Compact 36 × 36 — больше 24 (WCAG 2.5.8); Mobile 44.
-- `Item AI`: анимация отключается по `prefers-reduced-motion: reduce` — обязательно.
+## 11. Сабкомпоненты
+
+### `Sidebar/Item AI` `22699:10143` — только ИИ-ассистент
+Где в родителе: пункт «ИИ-ассистент» в `Sidebar` (маркер 5 гайда Sidebar).
+- **Свойства:** как у `Item`, но `✔ Selection` — `None` и `Self`; иконки — `Icon Regular` и `Icon Filled`. 25 вариантов.
+- **Состояния:** матрица Default · Hover · Pressed · Focus · Disabled × None · Self (Disabled — только None).
+- **Спецификация:** размеры и отступы как у `Item`. Фон Self — градиент #00C2FF → #008EFF → #6A5BFF, 8 / 20 / 30% — нет токена; иконка Self — градиент #5AC8FF → #008EFF → #D9B5FF — нет токена.
+
+### `Sidebar/Back` `23986:12266` — второй экран мобильного меню: назад к списку
+`𝐓 Title` — название раздела.
+- **Состояния:** Default · Pressed · Focus.
+- **Спецификация:**
+
+| Маркер | Что | Значение |
+|---|---|---|
+| A | Размер | 375 × 48, `frame/layout-frame-mobile-sm` |
+| B | Паддинг | `Spacing/spacing-3x-md` (12) сверху и снизу, `Spacing/spacing-4x-lg` (16) по бокам |
+| C | Иконка | `angle-left` 20, `icon/brand/primary` |
+| D | Зазор | `Spacing/spacing-2x-sm` (8) |
+| E | Title | `Body/md-medium`, `text/brand/primary` |
+
+### `Sidebar/Item Sign out` `23065:10000` — выход из аккаунта в мобильном меню
+- **Состояния:** Default · Pressed · Focus.
+- **Спецификация:** как у `Item, Mode=Mobile`; Label — `Body/sm-medium`, `text/critical/primary`; иконка — `Sidebar/Red/log-out` 20, `icon/critical/primary`.
+
+### `Sidebar/CompanySwitcher` `23069:10471` — первый ряд мобильного меню: текущая компания
+- **Свойства:** `📌 Quantity` — `Single` · `Multiple` (шеврон, открывает шит выбора компании).
+- **Состояния** (`Multiple`): Default · Pressed · Focus.
+- **Спецификация:**
+
+| Маркер | Что | Значение |
+|---|---|---|
+| A | Размер | 343 × 44 |
+| B | Паддинг | `Spacing/spacing-3x-md` (12), слева `Spacing/spacing-2x-sm` (8) |
+| C | Аватар | `Avatar` 28, `Radius/radius-s` |
+| D | Зазор | `Spacing/spacing-2x-sm` (8) |
+| E | Обводка | `border-sm` (1), `border/neutral/secondary` |
+
+Шит выбора компании — не компонент сайдбара: `Modal header` (Mobile, Sheet header) + `Selection List` (старый гайд).
