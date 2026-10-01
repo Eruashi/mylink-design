@@ -1,4 +1,4 @@
-Источник: Core kit, ветка `ahiQGs5RWn9cX6wCqlZUgz`, группа «Пункты меню» `23998:12268`: `Sidebar/Item` `21818:1370`, `Sidebar/Item AI` `22699:10143`, `Sidebar/Back` `23986:12266`, `Sidebar/Item Sign out` `23065:10000`, `Sidebar/CompanySwitcher` `23069:10471`; 2026-10-01. Скилл ds-guideline 0.5.0. Свёрстан в той же ветке, ждёт ревью.
+Источник: Core kit, ветка `ahiQGs5RWn9cX6wCqlZUgz`, группа «Пункты меню» `23998:12268`: `Sidebar/Item` `21818:1370`, `Sidebar/Item AI` `22699:10143`, `Sidebar/Back` `23986:12266`, `Sidebar/Item Sign out` `23065:10000`, `Sidebar/CompanySwitcher` `23069:10471`; 2026-10-01. Скилл ds-guideline 0.5.0. Свёрстан в той же ветке: фрейм `24072:12993` в секции «Документация v2» `24060:11244`, ждёт ревью.
 
 # Sidebar — пункты меню
 
@@ -107,7 +107,7 @@
 - У `None` на Hover и Pressed темнеет текст, иконка остаётся `icon/neutral/quaternary`. У Self и Child иконка меняется вместе с текстом.
 - Focus — кольцо `States/focus-state` (0, 0, 0, 3, `effects/focus-default`); у Self и Child фон на Focus плотнее: 12% вместо 8%.
 - В Mobile нет Hover: наведения на тач-экране нет.
-- `Item AI, Self`: градиент 8% в Default, 20% в Hover, 30% в Pressed. В Focus градиента нет — `bg/brand/secondary`. `TODO: проверить` — решение или ошибка.
+- `Item AI, Self`: градиент 8% в Default, 20% в Hover, 30% в Pressed. В Focus градиента нет — `bg/brand/secondary`. Расхождения состояний Item AI приняты («Решено не трогать» в `figma-status/core-kit/sidebar.md`).
 - `Back`: Pressed — фон `bg/neutral/secondary-pressed`, текст и иконка `*/brand/primary-pressed`; Focus — обводка 2 внутри `effects/focus-default` (`border-lg`): ряд во всю ширину экрана, внешнее кольцо обрезалось бы краями (описание компонента).
 - `Item Sign out`: Pressed — фон `bg/neutral/secondary-pressed`, текст и иконка `*/critical/primary-pressed`; Focus — `States/focus-state`.
 - `CompanySwitcher, Multiple`: Pressed — фон `bg/neutral/secondary-pressed`, обводка `border/neutral/pressed`; Focus — `States/focus-state`.

@@ -1,4 +1,4 @@
-Источник: Core kit, ветка `ahiQGs5RWn9cX6wCqlZUgz`, группа «Контейнер» `23998:12109`: `Sidebar` `22127:6645`, `Sidebar/Header` `22196:11974`, `Sidebar/Divider` `22196:11893`, `Sidebar/Scrollbar` `22491:61807`; 2026-10-01. Скилл ds-guideline 0.5.0. Свёрстан в той же ветке, ждёт ревью.
+Источник: Core kit, ветка `ahiQGs5RWn9cX6wCqlZUgz`, группа «Контейнер» `23998:12109`: `Sidebar` `22127:6645`, `Sidebar/Header` `22196:11974`, `Sidebar/Divider` `22196:11893`, `Sidebar/Scrollbar` `22491:61807`; 2026-10-01. Скилл ds-guideline 0.5.0. Свёрстан в той же ветке: фрейм `24060:11245` в секции «Документация v2» `24060:11244`, ждёт ревью.
 
 # Sidebar
 

@@ -1,4 +1,4 @@
-Источник: Core kit, ветка `ahiQGs5RWn9cX6wCqlZUgz`, группа «Вложенность и компакт» `23998:251074`: `Sidebar/Section` `22127:5810`, `Sidebar/SubItem` `22045:4322`, `Sidebar/SubItem Rail` `22127:5459`, `Sidebar/Popover` `22161:10227`, `Sidebar/Popover Item` `22164:10238`; 2026-10-01. Скилл ds-guideline 0.5.0. Свёрстан в той же ветке, ждёт ревью.
+Источник: Core kit, ветка `ahiQGs5RWn9cX6wCqlZUgz`, группа «Вложенность и компакт» `23998:251074`: `Sidebar/Section` `22127:5810`, `Sidebar/SubItem` `22045:4322`, `Sidebar/SubItem Rail` `22127:5459`, `Sidebar/Popover` `22161:10227`, `Sidebar/Popover Item` `22164:10238`; 2026-10-01. Скилл ds-guideline 0.5.0. Свёрстан в той же ветке: фрейм `24082:13591` в секции «Документация v2» `24060:11244`, ждёт ревью.
 
 # Sidebar — вложенность и компакт
 
