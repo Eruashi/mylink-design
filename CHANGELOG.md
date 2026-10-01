@@ -38,6 +38,15 @@
 
 ---
 
+## 2026-10-01 — ds-guideline 0.6.0: правки Zhandos и лида
+
+### Added
+- `ds/guidelines/modal-header-new.md`, `figma-status/core-kit/modal-header-new.md` — общий гайд нового Modal header (ветка `vfBuhFdEz5CETkwRBeIWI7`, `23856:4647`).
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.5.0 → 0.6.0 — по `feedback.md`: блок «Коротко» после обложки, бюджет текста ≤ 350 слов, маркеры анатомии на элементах, свойства подблоками по смыслу, раздел «Сабкомпоненты», «Делаем / не делаем» с полосой под примером и крупной меткой, «В интерфейсе» только из реальных макетов, спецификация разметкой, самопроверка глазами лида.
+- `templates/component-guideline.md`, `docs/guideline-structure.md` — 12 разделов по новой структуре.
+
 ## 2026-09-29 — ds-guideline 0.5.0 + гайдлайны Modal header и Tabs
 
 ### Added
