@@ -1,7 +1,7 @@
 ---
 name: ds-guideline
 description: Use this skill whenever a designer needs a guideline (documentation) for a specific component of the team's Core kit — writing a new guideline, rewriting an old checklist/MoSCoW one into the current format, or filling missing sections. Trigger on requests like "write a guideline for Modal header", "document this component", "make a guideline like Sidebar's", "напиши гайдлайн для компонента", "задокументируй компонент", "гайдлайн по формату Sidebar", or a Core kit node link with a request to describe anatomy, sizes, properties, states and do/don't. Output is a markdown guideline in the repo (ds/guidelines/); Figma is read-only unless the user explicitly asks to write and names a branch. It does NOT cover designing or changing the component, token migration (ds-token-update), or API decisions (design-systems).
-version: 0.6.3
+version: 0.7.0
 language: ru
 domain: design-systems
 status: draft
@@ -52,11 +52,13 @@ mirrors: null
    - при переписывании — число TODO до и после;
    - строка покрытия — в чат и status-файл: «Разделов N из применимых M, на фактах K, TODO: T».
 5. **Выдача:** `ds/guidelines/<компонент>.md` + короткий ответ: вывод, до 5 главных вопросов, следующий шаг.
-6. **Вёрстка в Figma** — только по просьбе и в названной ветке (правила ниже).
+6. **Вёрстка в Figma** — только по просьбе и в названной ветке (правила ниже). Собирает **один агент из блоков Guide kit** (см. «Guide kit»); параллельные команды не использовать — тест на Badge: то же время, ×3,4 токенов (`docs/experiments.md`).
 7. **Самопроверка глазами лида** (чек-лист ниже) — до выдачи ссылки.
 8. **Фидбек** пользователя → `feedback.md`.
 
 ## Вёрстка в Figma
+
+**Guide kit.** Блоки гайда — локальные компоненты: `Guide/Canvas`, `Guide/Tile`, `Guide/Caption`, `Guide/Subheading`, `Guide/Marker` (Number / Letter), `Guide/Metric card`, `Guide/DoDont`, `Guide/Table row`, `Guide/Overlay`. ID, свойства и приёмы — `ds/_scripts/guide-kit.json`. Сейчас kit лежит в ветке `QbTS4UqcIFOYBGNAzKeD13` (фрейм «Guide kit» `24009:143694`) — в других файлах и ветках недоступен, пока его не опубликуют в библиотеку (`TODO: где публикуем — Zhandos`). Гайд собирать только из инстансов kit; свои фреймы — лишь горизонтальные ряды внутри слотов. Нет нужного блока — сначала добавить его в kit, потом использовать.
 
 **Каркас.** Фрейм 1600, поля 96, между разделами 160. Раздел — две колонки: слева 320 (номер, заголовок 32/40 Bold, описание 16/24 серое — только если добавляет факт), справа — подложка `bg/neutral/primary`, радиус 24, паддинг 48; плитки примеров внутри — белые. Подписи примеров над ними, 13/18 серые: только `Prop=Value` или 2–4 слова.
 

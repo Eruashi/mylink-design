@@ -38,6 +38,16 @@
 
 ---
 
+## 2026-10-01 — ds-guideline 0.6.1–0.7.0 + тест на Badge
+
+### Added
+- `ds/guidelines/badge.md`, `figma-status/core-kit/badge.md` — гайд Badge (ветка `QbTS4UqcIFOYBGNAzKeD13`).
+- `ds/_scripts/guide-kit.json` — ID и приёмы Guide kit (блоки гайда компонентами).
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.6.0 → 0.7.0 — по `feedback.md`: дизайн «Когда использовать» и «Делаем / не делаем» по образцам Zhandos, «В интерфейсе» без подмен, без a11y на канвасе, сборка одним агентом из Guide kit.
+- `templates/component-guideline.md`, `docs/guideline-structure.md`, `docs/experiments.md` — то же; сравнение «один агент vs команда».
+
 ## 2026-10-01 — ds-guideline 0.6.0: правки Zhandos и лида
 
 ### Added
