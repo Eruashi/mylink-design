@@ -38,6 +38,12 @@
 
 ---
 
+## 2026-10-02 — ds-guideline 0.9.0: «Когда использовать» плитками
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.8.1 → 0.9.0 — по `feedback.md` (ревью Alert): «Когда использовать» как «Делаем / не делаем», реалистичные тексты в примерах.
+- `templates/component-guideline.md`, `docs/guideline-structure.md` — то же.
+
 ## 2026-10-02 — Гайд Alert
 
 ### Added
