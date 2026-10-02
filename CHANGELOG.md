@@ -38,6 +38,13 @@
 
 ---
 
+## 2026-10-02 — ds-guideline 0.8.0: визуал в «Когда использовать», «В интерфейсе» без целого экрана
+
+### Changed
+- `skills/design-systems/ds-guideline/SKILL.md` 0.7.1 → 0.8.0 — по `feedback.md` (ревью дизайнеров): пример у каждого пункта «Когда использовать», в «В интерфейсе» клонируются только нужные элементы.
+- `templates/component-guideline.md`, `docs/guideline-structure.md` — то же.
+- `ds/_scripts/guide-kit.json` — `Guide/When item`, приёмы.
+
 ## 2026-10-01 — Guide kit: каркас и блоки гайда
 
 ### Changed
