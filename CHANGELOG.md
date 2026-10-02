@@ -38,6 +38,12 @@
 
 ---
 
+## 2026-10-02 — Guide kit пересобран
+
+### Changed
+- `ds/_scripts/guide-kit.json` — новые id kit (`_Guide/*`, фрейм `24191:271`), `_Guide/When item`, `_Guide/Example cell`, `_Guide/UI example`.
+- `skills/design-systems/ds-guideline/SKILL.md` 0.8.0 → 0.8.1 — по `feedback.md`: имена `_Guide/`, место и состав kit.
+
 ## 2026-10-02 — ds-guideline 0.8.0: визуал в «Когда использовать», «В интерфейсе» без целого экрана
 
 ### Changed
