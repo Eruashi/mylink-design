@@ -38,6 +38,15 @@
 
 ---
 
+## 2026-10-02 — Гайд Alert
+
+### Added
+- `ds/guidelines/alert.md`, `figma-status/core-kit/alert.md` — гайд Alert из Guide kit (ветка `QbTS4UqcIFOYBGNAzKeD13`, `24206:817`).
+
+### Changed
+- `ds/_scripts/guide-kit.json` — `_Guide/When item stacked`.
+- `docs/experiments.md` — замер kit на Alert.
+
 ## 2026-10-02 — Guide kit пересобран
 
 ### Changed
