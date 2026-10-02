@@ -7,7 +7,7 @@
 
 **Скопировать себе:**
 - `Alert, 📌 Type=Compact, 🎛️ Variant=Subtle, ⚙️ State=Warning, 🔘 Action=No action` — предупреждение над контентом страницы («Создайте первый урок, чтобы опубликовать курс», страница курса `21002:39216`).
-- `Alert, 📌 Type=Regular, 🎛️ Variant=Subtle, ⚙️ State=Error, 🔘 Action=Close button` — ошибка с пояснением («Внимание! Обнаружены проблемы с подключением к серверу» + Description). Текст — из старого гайда `20011:196707`, не из продукта; `TODO: проверить` — заменить продуктовым.
+- `Alert, 📌 Type=Regular, 🎛️ Variant=Subtle, ⚙️ State=Error, 🔘 Action=Close button` — ошибка с пояснением: Title «Не удалось сохранить изменения», Description «Проверьте подключение к интернету и попробуйте ещё раз» (текст по ревью дизайнеров 2026-10-02).
 
 | Ссылка | Где |
 |---|---|
@@ -20,7 +20,7 @@
 |---|---|---|---|
 | варианта | типа | состояний | опции контента |
 
-72 = 2 `📌 Type` × 2 `🎛️ Variant` × 6 `⚙️ State` × 3 `🔘 Action`. Размера (`Size`) нет — роль размера играет `📌 Type` (Regular / Compact). Опции контента: `𝐓 Description`, `📝 Details`, `✖ Close icon`. `Instance` (INSTANCE_SWAP) не считаем: привязан к одному варианту из 72 (см. раздел 7).
+72 = 2 `📌 Type` × 2 `🎛️ Variant` × 6 `⚙️ State` × 3 `🔘 Action`. Размера (`Size`) нет — роль размера играет `📌 Type` (Regular / Compact). Опции контента: `𝐓 Description`, `📝 Details`, `✖ Close icon`.
 
 ## 3. Когда использовать
 | Используем | Не используем → что вместо |
@@ -31,19 +31,19 @@
 
 `TODO: проверить` — списки выведены из старого гайда (`20011:196707`: «информационные, успешные, предупреждающие и критические уведомления»), реального использования (Compact Warning на страницах курса) и наличия Toast / Tooltip / поля с ошибкой в файле; компонент их не ограничивает. `Notification` `19692:5486` (тёмный снекбар со стопкой) — граница с Alert не описана, `TODO: проверить`.
 
-На канвасе у каждого пункта пример (блок `_Guide/When item stacked`): Alert с реальной подписью / Toast `Compact, Success` / Tooltip `Bottom, Start` / Standard input `Email, md, Filled, Error`.
+На канвасе — `_Guide/When`, `Layout=Tiles`: у каждого пункта белая плитка 180 с примером, текст под ней. Примеры: Alert Compact Warning «Создайте первый урок, чтобы опубликовать курс»; Alert Regular Error «Не удалось сохранить изменения» + «Проверьте подключение к интернету и попробуйте ещё раз»; Toast `Compact, Success` «Курс опубликован» + кнопка «Отменить»; Tooltip `Bottom, Start` «Курс увидят только ученики группы»; Standard input `Email, md, Filled, Error` — значение «a.ivanova@mail», ошибка «Введите почту в формате name@mail.ru».
 
 ## 4. Анатомия
 Пример: `Alert, Type=Regular, Variant=Subtle, State=Information, Action=Button`, `📝 Details`=true; второй — `Action=Close button` (маркер 7).
 
 | № | Элемент | Что это (слой / компонент) | Обязательный | Стиль и токены |
 |---|---|---|---|---|
-| 1 | Контейнер | корень варианта, auto layout VERTICAL, ширина 486 FIXED, высота hug | да | фон и обводка по State и Variant (раздел 9), `Radius/radius-md` (12) |
+| 1 | Контейнер | корень варианта, auto layout VERTICAL, ширина 486 FIXED, высота hug | да | фон и обводка по State и Variant (раздел 10), `Radius/radius-md` (12) |
 | 2 | Иконка статуса | инстанс иконки по State (`info-circle` — Default, Information; `check-circle` — Success; `exclamation-circle` — Warning, Error, Neutral); свойства нет | да | 20, Compact 16, нет токена; `icon/<роль>/primary` |
 | 3 | Title | текст `𝐓 Title`, `maxLines` 3, обрезка «…» | да | 14/20 Medium, Compact 12/16 Medium; текстовый стиль не привязан; `text/neutral/primary` (Outlined — `text/<роль>/primary`) |
 | 4 | Description | текст `𝐓 Description text` | нет (`𝐓 Description`, по умолчанию да), только Regular | 14/20 Regular; `text/neutral/secondary` |
-| 5 | Кнопка | инстанс `button ` (`↕ Size=xs, 🖇️ Style=Neutral, 📌 Type=Primary`), текст «Undo» | только `Action=Button` | высота 28, `bg/neutral/tertiary`, `text/neutral/white` |
-| 6 | Details | фрейм `Container`: 3 строки `Info Row` (Label 120 + Value) | нет (`📝 Details`, по умолчанию нет), только Regular | `Radius/radius-sm` (8), фон по State (раздел 9) |
+| 5 | Кнопка | инстанс `button ` (`↕ Size=xs, 🖇️ Style=Neutral, 📌 Type=Primary`), текст «Undo» по умолчанию (в гайде — «Открыть») | только `Action=Button` | высота 28, `bg/neutral/tertiary`, `text/neutral/white` |
+| 6 | Details | фрейм `Container`: 3 строки `Info Row` (Label 120 + Value) | нет (`📝 Details`, по умолчанию нет), только Regular | `Radius/radius-sm` (8), фон по State (раздел 10) |
 | 7 | Close icon | инстанс иконки `times` | только `Action=Close button` (`✖ Close icon`, по умолчанию да) | 20, Compact 16; `icon/neutral/secondary` |
 
 Сабкомпонентов нет: кнопка и иконки — библиотечные инстансы без своей настройки в Alert; Details — фрейм, не компонент.
@@ -58,14 +58,14 @@
 ### Действие: 🔘 Action
 `Action=No action` (по умолчанию) · `Action=Close button` · `Action=Button`.
 - `✖ Close icon` действует только при `Action=Close button`; `false` даёт тот же вид, что `No action`.
-- Текст кнопки — свойство вложенного `button ` (`𝐓 Text`), по умолчанию «Undo» (англ.). `TODO: проверить` — продуктовый текст.
+- Текст кнопки — свойство вложенного `button ` (`𝐓 Text`), по умолчанию «Undo» (англ.); в примерах гайда — «Открыть» / «Создать урок».
 
 ### Контент: 𝐓 Description · 📝 Details
 Базовый · `𝐓 Description=false` · `📝 Details=true`. Не действуют при `Type=Compact`.
 - Details: 3 строки Label / Value, тексты — правкой слоёв (свойств нет), число строк не меняется. По умолчанию — «Добавил(а) / Курмашева А.И.», «Дата добавления / 26.07.2023», «Комментарий / Кандидат отлично прошел собеседование».
 
 ## 6. Состояния
-`⚙️ State`: Default · Information · Success · Warning · Error · Neutral. Это смысл сообщения (цвет и иконка), а не интерактивные состояния: Hover, Pressed, Focus, Disabled нет. Цвета — раздел 9.
+`⚙️ State`: Default · Information · Success · Warning · Error · Neutral. Это смысл сообщения (цвет и иконка), а не интерактивные состояния: Hover, Pressed, Focus, Disabled нет. Цвета — раздел 10.
 
 На канвасе таблица «Цвета по State» стоит в этом разделе, а не в «Спецификации»: иначе «Спецификация» 1538 > 1200.
 
@@ -79,7 +79,6 @@
 - Ширина 486 FIXED, не зависит от текста; тексты FILL + перенос. В продукте инстансы 486.
 - Старый гайд: «при Action=Button Title максимум 2 строки, Description максимум 3» — в компоненте Title 3 строки, Description без лимита; не подтвердилось.
 - Лимит символов Title с запасом +30% на казахский — `TODO: проверить`.
-- Сейчас так: `Instance` (INSTANCE_SWAP, `times`) привязан к Close icon только в `Compact, Outlined, Default, Close button` `20073:4560`; в остальных 71 варианте свойство ничего не меняет. Иконку статуса заменить свойством нельзя.
 
 ## 8. Делаем / не делаем
 | Делаем | Не делаем |
@@ -89,7 +88,10 @@
 
 `TODO: проверить` — пара 1 из старого гайда («Compact — только для коротких однострочных сообщений»), пара 2 — из значений State; компонент их не ограничивает.
 
-## 9. Спецификация (web)
+## 9. В интерфейсе
+Табель — дровер «Создание табеля» (макет `24215:5061`, вставлен Zhandos в ветку): клон блока `Body` `24215:5070` — карточка `.Timesheet summary` + `Alert, Type=Regular, Variant=Subtle, State=Warning, Action=Close button` (текущий `Alert` `12133:4599`). Title «Отправьте табель на согласование до 10 ноября», Description «Потом он уйдёт в архив со статусом «Не отправлен», и редактировать его будет нельзя». Шапка, футер и скрытый `Top` не клонировались.
+
+## 10. Спецификация (web)
 Разметка: `Alert, Type=Regular, Variant=Subtle, State=Neutral, Action=Button`, `📝 Details`=true, 1× (Neutral — чтобы заливки паддингов и зазоров были видны).
 
 | Маркер | Что | Regular | Compact |
@@ -130,7 +132,7 @@ Outlined: фон `bg/white/white-primary`, обводка `border/neutral/primar
 
 **Mantine:** `TODO: фронты`.
 
-## 10. Flutter
+## 11. Flutter
 | Свойство Figma | Виджет / параметр Flutter | Комментарий |
 |---|---|---|
 | `📌 Type` | `TODO: мобильщики` | |
@@ -142,4 +144,4 @@ Outlined: фон `bg/white/white-primary`, обводка `border/neutral/primar
 **Отличия от web:** `TODO: мобильщики`. Мобильных вариантов в Figma нет; хит-зона Close icon 20 / 16 меньше 44.
 
 ---
-«В интерфейсе» не выводим: все 3 инстанса в продуктовых макетах ветки (`21002:39276` ✏️ Table (Катя), `21106:14495` ✅ Progress-circle-bar, `22410:4406` ✅ Modal — «Создайте первый урок, чтобы опубликовать курс», Compact Warning) скрыты (`visible=false`). Вопрос дизайнеру — в status-файле.
+Тексты примеров на канвасе (по ревью дизайнеров 2026-10-02, одна пара Title / Description на State, в подблоках «Свойств» — одинаковые): Default «Новые уроки появятся в понедельник» / «Мы пришлём уведомление, когда курс обновится»; Information «Кандидат прошёл собеседование» / «Примите решение по кандидату до 15 октября»; Success «Табель отправлен на согласование» / «Руководитель получит уведомление и проверит данные»; Warning «Отправьте табель на согласование до 10 ноября» / «Потом он уйдёт в архив со статусом «Не отправлен»» (Compact — «Создайте первый урок, чтобы опубликовать курс»); Error «Не удалось сохранить изменения» / «Проверьте подключение к интернету и попробуйте ещё раз»; Neutral «Кандидат перенесён в резерв» / «Вернуть его в воронку можно в любой момент». Кнопка — «Открыть» (Compact Warning — «Создать урок»).
